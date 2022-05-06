@@ -1,0 +1,7 @@
+products, product_categories, categories TABLE => más adatok
+categories TABLE => kevesebb sor
+Shipping fee beállítása attól függően, hogy milyen kézbesítést kér
+
+P-26: 0:58-tól customers tábla létrehozása (5:51-ig)
+
+
