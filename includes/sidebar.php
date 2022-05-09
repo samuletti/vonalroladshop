@@ -2,7 +2,7 @@
 
     <div class="panel-heading"> <!-- panel-heading begin -->
     
-        <h3 class="panel-title">Products Categories</h3>
+        <h3 class="panel-title">Termék típusok</h3>
 
     </div> <!-- panel-heading finish -->
 
@@ -20,7 +20,7 @@
 
     <div class="panel-heading"> <!-- panel-heading begin -->
     
-        <h3 class="panel-title">Categories</h3>
+        <h3 class="panel-title">Kategóriák</h3>
 
     </div> <!-- panel-heading finish -->
 

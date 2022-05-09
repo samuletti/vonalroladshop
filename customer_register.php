@@ -11,10 +11,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Register
+                            Regisztráció
                         </li>
                     </ul> <!-- breadcrumb finish -->
 
@@ -38,7 +38,7 @@
 
                             <center> <!-- center begin -->
 
-                                <h2> Register a new account </h2>
+                                <h2> Új felhasználó létrehozása </h2>
 
                             </center> <!-- center finish -->
 
@@ -46,56 +46,56 @@
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Name</label>
+                                    <label>Név:</label>
                                     <input type="text" class="form-control" name="c_name" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Email</label>
+                                    <label>E-mail cím:</label>
                                     <input type="text" class="form-control" name="c_email" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Password</label>
+                                    <label>Jelszó:</label>
                                     <input type="password" class="form-control" name="c_pass" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Country</label>
+                                    <label>Ország:</label>
                                     <input type="text" class="form-control" name="c_country" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your City</label>
+                                    <label>Város:</label>
                                     <input type="text" class="form-control" name="c_city" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Contact</label>
-                                    <input type="text" class="form-control" name="c_contact" required>
-
-                                </div> <!-- form-group finish -->
-
-                                <div class="form-group"> <!-- form-group begin -->
-
-                                    <label>Your Address</label>
+                                    <label>Cím:</label>
                                     <input type="text" class="form-control" name="c_address" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Your Profile Picture</label>
+                                    <label>Telefonszám:</label>
+                                    <input type="text" class="form-control" name="c_contact" required>
+
+                                </div> <!-- form-group finish -->
+
+                                <div class="form-group"> <!-- form-group begin -->
+
+                                    <label>Profilkép:</label>
                                     <input type="file" class="form-control form-height-custom" name="c_image" required>
 
                                 </div> <!-- form-group finish -->
@@ -104,7 +104,7 @@
 
                                     <button type="submit" name="register" class="btn btn-primary">
 
-                                    <i class="fa fa-user-md"></i> Register </button>
+                                    <i class="fa fa-user-md"></i> Regisztráció </button>
 
                                 </div> <!-- text-center finish -->
                                 
@@ -146,15 +146,44 @@
         $c_image = $_FILES['c_image']['name'];
         $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
-        $c_ip = getRealUserIp();
+        $c_ip = getRealIpUser();
+
+        /* $customer_id = "select customer_id from customers where customer_email='$c_email'"; */
+
+        mkdir("customer/customers/$c_email");
+        mkdir("customer/customers/$c_email/pics");
+        mkdir("customer/customers/$c_email/draws");
+
 
         move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
 
-        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_profile,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
 
         $run_customer = mysqli_query($con,$insert_customer);
 
-        $sel_cart = "select ";
+        $sel_cart = "select * from cart where ip_add='$c_ip'";
+
+        $run_cart = mysqli_query($con,$sel_cart);
+
+        $check_cart = mysqli_num_rows($run_cart);
+
+        if($check_cart>0){
+            //register with item(s) in cart
+
+            $_SESSION['customer_email']=$c_email;
+
+            echo "<script>window.open('cart.php'.'_self')</script>";
+            echo "<script>alert('Successful Registration!')</script>";
+            
+        }else{
+            //register with empty cart
+
+            $_SESSION['customer_email']=$c_email;
+
+            echo "<script>alert('Successful Registration!')</script>";
+            echo "<script>window.open('index.php','_self')</script>";
+            
+        }
 
     }
 

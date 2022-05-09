@@ -61,8 +61,24 @@
 
                 <div class="col-md-6 offer"> <!-- col-md-6 offer begin -->
 
-                    <a href="#" class="btn btn-success btn-sm">Welcome</a>
-                    <a href="checkout.php"><?php items(); ?> Items in your Cart | Cart Total Price: <?php total_price(); ?></a>
+                    <a href="#" class="btn btn-success btn-sm">
+
+                        <?php 
+
+                            if(!isset($_SESSION['customer_email'])){
+
+                                echo "Üdv, Vendég";
+
+                            }else{
+
+                                echo "Üdv, " . $_SESSION['customer_email'] . " ";
+
+                            }
+                        
+                        ?>
+
+                    </a>
+                    <a href="checkout.php"><?php items(); ?> termék van a kosaradban | Termékek ára: <?php total_price(); ?></a>
 
                 </div> <!-- col-md-6 offer finish -->
 
@@ -71,16 +87,32 @@
                     <ul class="menu"> <!-- cmenu begin -->
                         
                         <li>
-                            <a href="customer_register.php">Register</a>
+                            <a href="customer_register.php">Regisztráció</a>
                         </li>
                         <li>
-                            <a href="customer/my_account.php">My Account</a>
+                            <a href="customer/my_account.php?my_orders">Fiókom</a>
                         </li>
                         <li>
-                            <a href="cart.php">Go To Cart</a>
+                            <a href="cart.php">Kosár</a>
                         </li>
                         <li>
-                            <a href="checkout.php">Login</a>
+                            <a href="checkout.php">
+
+                                <?php 
+
+                                    if(!isset($_SESSION['customer_email'])){
+
+                                        echo "<a href='./checkout.php'> Bejelentkezés </a>";
+
+                                    }else{
+
+                                        echo "<a href='logout.php'> Kijelentkezés </a>";
+
+                                    }
+                                
+                                ?>
+
+                            </a>
                         </li>
 
                     </ul> <!-- cmenu finish -->
@@ -121,19 +153,33 @@
                         <ul class="nav navbar-nav left"> <!-- nav navbar-nav left begin -->
 
                         <li class="<?php if($active=='Home')echo "active"; ?>">
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li class="<?php if($active=='Shop')echo "active"; ?>">
-                            <a href="shop.php">Shop</a>
+                            <a href="shop.php">Bolt</a>
                         </li>
                         <li class="<?php if($active=='Account')echo "active"; ?>">
-                            <a href="customer/my_account.php">My Account</a>
+                            
+                            <?php 
+
+                                if(!isset($_SESSION['customer_email'])){
+
+                                    echo "<a href='checkout.php'>Fiókom</a>";
+                                
+                                }else{
+
+                                    echo "<a href='customer/my_account.php?my_orders'>Fiókom</a>";
+
+                                }
+                            
+                            ?>
+
                         </li>
                         <li class="<?php if($active=='Cart')echo "active"; ?>">
-                            <a href="cart.php">Shopping Cart</a>
+                            <a href="cart.php">Kosár</a>
                         </li>
                         <li class="<?php if($active=='Contact')echo "active"; ?>">
-                            <a href="contact.php">Contact Us</a>
+                            <a href="contact.php">Kapcsolat</a>
                         </li>
 
                         </ul> <!-- nav navbar-nav left finish -->
@@ -143,7 +189,7 @@
                     <a href="cart.php" class="btn navbar-btn btn-primary right"> <!-- btn navbar-btn btn-primary right begin -->
                 
                         <i class="fa fa-shopping-cart"></i>
-                        <span><?php items(); ?> Items in Your Cart</span>
+                        <span><?php items(); ?> termék van a kosaradban</span>
 
                     </a>  <!-- btn navbar-btn btn-primary right finish -->
 
@@ -165,7 +211,7 @@
 
                             <div class="input-group"> <!-- input-group begin -->
 
-                                <input type="text" class="form-control" placeholder="Search" name="user_query" required>
+                                <input type="text" class="form-control" placeholder="Keresés" name="user_query" required>
 
                                 <span class="input-group-btn"> <!-- input-group-btn begin -->
                                 <button type="submit" name="search" value="Search" class="btn btn-primary"> <!-- btn btn-primary begin -->

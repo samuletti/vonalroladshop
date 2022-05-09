@@ -37,7 +37,7 @@
 
             if(mysqli_num_rows($run_check)>0){
 
-                echo "<script>alert('This product is already in your cart')</script>";
+                echo "<script>alert('Ez a termék már a kosaradban van.')</script>";
                 echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
                 
             }else{
@@ -108,13 +108,13 @@
 
                             <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
 
-                                View Details
+                                Részletek
 
                             </a>
 
                             <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
 
-                                <i class='fa fa-shopping-cart'></i>Add to Cart
+                                <i class='fa fa-shopping-cart'></i>Kosárba
 
                             </a>
 
@@ -220,7 +220,7 @@
 
                     <div class='box'>
 
-                        <h1> No product found in this product category </h1>
+                        <h1> Nem található termék ebben a kategóriában </h1>
                     
                     </div>
 
@@ -286,13 +286,13 @@
 
                             <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
 
-                                View Details
+                                Részletek
 
                             </a>
 
                             <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
 
-                                <i class='fa fa-shopping-cart'></i>Add to Cart
+                                <i class='fa fa-shopping-cart'></i>Kosárba
 
                             </a>
 
@@ -344,7 +344,7 @@
 
                     <div class='box'>
 
-                        <h1> No products found in this caregory </h1>
+                        <h1> Nem található termék ebben a kategóriában </h1>
                     
                     </div>
                 
@@ -410,13 +410,13 @@
 
                             <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
 
-                                View Details
+                                Részletek
 
                             </a>
 
                             <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
 
-                                <i class='fa fa-shopping-cart'></i>Add to Cart
+                                <i class='fa fa-shopping-cart'></i>Kosárba
 
                             </a>
 

@@ -11,10 +11,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Cart
+                            Kosár
                         </li>
                     </ul> <!-- breadcrumb finish -->
 
@@ -26,7 +26,7 @@
 
                         <form action="cart.php" method="post" enctype="multipart/form-data"> <!-- form begin -->
 
-                        <h1>Shopping Cart</h1>
+                        <h1>Kosár</h1>
 
                         <?php
 
@@ -40,7 +40,7 @@
                         
                         ?>
 
-                        <p class="text-muted">You currently have <?php items(); ?> item(s) in your cart</p>
+                        <p class="text-muted">Jelenleg <?php items(); ?> termék van a kosaradban</p>
 
                         <div class="table-responsive"> <!-- table-responsive begin -->
 
@@ -49,12 +49,12 @@
                                 <thead> <!-- thead begin -->
 
                                     <tr>
-                                        <th colspan="2">Product</th>
-                                        <th>quantity</th>
-                                        <th>Unit price</th>
-                                        <th>Size</th>
-                                        <th colspan="1">Delete</th>
-                                        <th colspan="2">Sub Total</th>
+                                        <th colspan="2">Termék</th>
+                                        <th>Mennyiség</th>
+                                        <th>Egységár</th>
+                                        <th>Méret</th>
+                                        <th colspan="1">Törlés</th>
+                                        <th colspan="2">Fizetendő</th>
                                     </tr>
 
                                 </thead> <!-- thead finish -->
@@ -143,7 +143,7 @@
 
                                     <tr> <!-- tr begin -->
 
-                                        <th colspan="5">Total</th>
+                                        <th colspan="5">Összesen</th>
                                         <th colspan="2"><?php echo $total ?> Ft</th>
                                         
                                     </tr> <!-- tr finish -->
@@ -160,7 +160,7 @@
 
                                 <a href="shop.php" class="btn btn-default"> <!-- btn btn-default begin -->
 
-                                    <i class="fa fa-chevron-left"></i> Continue Shopping
+                                    <i class="fa fa-chevron-left"></i> Vásárlás folytatása
 
                                 </a> <!-- btn btn-default finish -->
 
@@ -170,13 +170,13 @@
 
                                 <button type="submit" name="update" value="update cart" class="btn btn-default"> <!-- btn btn-default begin -->
 
-                                    <i class="fa fa-refresh"></i> Update Cart
+                                    <i class="fa fa-refresh"></i> Kosár frissítése
 
                                 </button> <!-- btn btn-default finish -->
 
                                 <a href="checkout.php" class="btn btn-primary">
 
-                                    Proceed Checkout <i class="fa fa-chevron-right"></i>
+                                    Tovább a fizetéshez <i class="fa fa-chevron-right"></i>
 
                                 </a>
 
@@ -220,7 +220,7 @@
                     <div id="row same-height-row"> <!-- #row same-height-row begin -->
                         <div class="col-md-3 col-sm-6"> <!-- col-md-3 col-sm-6 begin -->
                             <div class="box same-height headline"> <!-- box same-height headline begin -->
-                                <h3 class="text-center">Products You Maybe Like</h3>
+                                <h3 class="text-center">Ez is érdekelhet</h3>
                             </div> <!-- box same-height headline begin -->
                         </div> <!-- col-md-3 col-sm-6 finish -->
 
@@ -277,13 +277,13 @@
 
                         <div class="box-header"> <!-- box-header begin -->
 
-                            <h3>Order Summary</h3>
+                            <h3>Rendelés összegzés</h3>
 
                         </div> <!-- box-header finish -->
 
                         <p class="text-muted"> <!-- text-muted begin -->
 
-                            Shipping and additional costs are calculated based on value you have entered
+                            A szállítási díj függ a választott kézbesítési módtól.
 
                         </p> <!-- text-muted finish -->
 
@@ -295,14 +295,14 @@
 
                                     <tr> <!-- tr begin -->
 
-                                        <td> Order Sub-Total </td>
+                                        <td> Rendelés </td>
                                         <th> <?php echo $total; ?> Ft </th>
 
                                     </tr>  <!-- tr finish -->
 
                                     <tr> <!-- tr begin -->
 
-                                        <td> Shipping and Handling </td>
+                                        <td> Szállítási díj </td>
                                         <td> <?php echo $shipping_fee = 1400; ?> Ft </td>
 
                                     </tr> <!-- tr finish -->
@@ -316,7 +316,7 @@
 
                                     <tr class="total"> <!-- tr begin -->
 
-                                        <td> Total </td>
+                                        <td> Összesen </td>
                                         <th> <?php echo $total + $shipping_fee ?> Ft </th>
 
                                     </tr> <!-- tr finish -->

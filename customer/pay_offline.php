@@ -1,9 +1,9 @@
 <center> <!-- center begin -->
 
-    <h1> Pay Offline Using Method </h1>
+    <h1> Fizetéshez szükségees adatok </h1>
 
     <p class="text-muted">
-        If you have any questions feel free to <a href="../contact.php">Contact Us</a>. Our customer service work <strong>24/7</strong>
+        Bármilyen kérdés esetén <a href="../contact.php">keress minket</a> bizalommal!
     </p>
 
 </center> <!-- center finish -->
@@ -18,9 +18,7 @@
 
             <tr> <!-- tr begin -->
 
-                <th> Bank Account Details: </th>
-                <th> Telefonos azonosítás: </th>
-                <th> Other2 Details: </th>
+                <th> Banki átutalás adatai: </th>
 
             </tr> <!-- tr finish -->
 
@@ -28,9 +26,7 @@
 
         <tbody> <!-- tbody begin -->
 
-            <td> Bank Name: Erste | Account No: 116xxxxx-00000000-5957xxxx | Name: Samu Letícia Vivien</td>
-            <td> Telefonszám: +36 30 2** **48 </td>
-            <td> Név: Samu Letícia Vivien | E-mail: samu.leticia@gmail.com </td>
+            <td> <strong>Bank:</strong> Erste Bank | <strong>Számlaszám:</strong> 116xxxxx-00000000-5957xxxx | <strong>Név:</strong> Samu Letícia Vivien | <strong>Közlemény:</strong> Megrendelő neve</td>
 
         </tbody> <!-- tbody finish -->
 

@@ -1,7 +1,49 @@
 products, product_categories, categories TABLE => más adatok
+
 categories TABLE => kevesebb sor
+
+//TODO
+
 Shipping fee beállítása attól függően, hogy milyen kézbesítést kér
 
-P-26: 0:58-tól customers tábla létrehozása (5:51-ig)
+--P-26: 0:58-tól customers tábla létrehozása (5:51-ig)
+
+--Write jogot adni a customer image mappához is
+
+--34:25-ig van megcsinálva
+
+--Successful reg-nél index.php-ra(OK) vagy cart.php-ra kéne mennie, de nem megy
+
+Egy e-mail címmel egyszer lehessen regisztrálni
+
+Cart-ba ne az ip kerüljön eltárolásra, hanem az account, ha be van jelentkezve
+-> add another col with "customer_email" pl és a cartnál mindenhol egy check hogy be van-e jelentkezve, ha igen, akkor a "customer_email" legyen mentve, különben az ip
+
+--P-27: 36:06-ig van megcsinálva
+
+Rendelési, fizetési folyamat legyen a következő:
+- Ha beérkezett a rendelés, kapjon egy e-mailt a vásárló, amiben benne vannak a rendelés adatai és a fizetéshez szükséges dolgok
+- Az admin oldalon lehessen fizetettre változtatni a megrendelés állapotát, amit lát a vásárló
+
+Nálam csak offline payment lesz
+
+Adott felhasználóhoz tartozó összes kép legyen egy mappában, vagy az összes profilkép/fotó/rajz legyen külön-külön mappában (ekkor átnevezni mindet mentéskor)?
+
+My_orders-nél valahogy megjeleníteni az order_id-t is (csak a valóságban hasznosabb lenne, reálisabb, mint a vásárló saját id-ja)
+
+--Order_id nem jól megy fel az url-be
+
+--P-31 28:15
+
+Customer nem confirmolhatja a saját kifizetését, csak az admin -> nem kell a confirm payment gomb és oldal sem -- lehet egy tábla, amiben én vezetem a kifizetéseket és azt kapcsolom össze ezzel valahogy
+
+Fizetés után nekünk csak Paid lesz, nem Completed az adatbázisban
+
+Customer_contact helyett legyen mindenhol customer_phone
+
+--P-32 59:13-ig megvan, DEBUG
+
+Sikeres reg után a fiókom/my_ordersre dobjon!
+
 
 

@@ -1,11 +1,9 @@
 <center> <!-- center begin -->
 
-    <h1> My Orders </h1>
-
-    <p class="lead"> Your orders on one place</p>
+    <h1> Rendeléseim </h1>
 
     <p class="text-muted">
-        If you have any questions feel free to <a href="../contact.php">Contact Us</a>. Our customer service work <strong>24/7</strong>
+        Bármilyen kérdés esetén <a href="../contact.php">keress minket</a> bizalommal!
     </p>
 
 </center> <!-- center finish -->
@@ -20,14 +18,14 @@
 
             <tr> <!-- tr begin -->
 
-                <th> ON: </th>
-                <th> Due Amount: </th>
-                <th> Invoice No: </th>
-                <th> Qty: </th>
-                <th> Size: </th>
-                <th> Order Date: </th>
-                <th> Paid / Unpaid: </th>
-                <th> Status: </th>
+                <th> ID: </th>
+                <th> Fizetendő: </th>
+                <th> Számla: </th>
+                <th> Mennyiség: </th>
+                <th> Méret: </th>
+                <th> Rendelés dátuma: </th>
+                <th> Fizetve?: </th>
+                <th> Állapot: </th>
 
             </tr> <!-- tr finish -->
 
@@ -35,63 +33,67 @@
 
         <tbody> <!-- tbody begin -->
 
+            <?php 
+
+                $customer_session = $_SESSION['customer_email'];
+
+                $get_customer = "select * from customers where customer_email='$customer_session'";
+
+                $run_customer = mysqli_query($con,$get_customer);
+
+                $row_customers = mysqli_fetch_array($run_customer);
+
+                $customer_id = $row_customers['customer_id'];
+
+                $get_orders = "select * from customer_orders where customer_id='$customer_id'";
+
+                $run_orders = mysqli_query($con,$get_orders);
+
+                $i = 0;
+
+                while($row_orders = mysqli_fetch_array($run_orders)){
+
+                    $order_id = $row_orders['order_id'];
+                    $due_amount = $row_orders['due_amount'];
+                    $invoice_no = $row_orders['invoice_no'];
+                    $qty = $row_orders['qty'];
+                    $size = $row_orders['size'];
+                    $order_date = substr($row_orders['order_date'],0,11);
+                    $order_status = $row_orders['order_status'];
+
+                    $i++;
+
+                    if($order_status=='Pending'){
+
+                        $order_status = 'Fizetésre vár';
+
+                    }else{
+
+                        $order_status = 'Fizetve';
+
+                    }
+            
+            ?>
+
             <tr> <!-- tr begin -->
 
-                <th> #1 </th>
-                <td> 16 000 Ft</td>
-                <td> 6253336 </td>
-                <td> 2 </td>
-                <td> Small </td>
-                <td> 2022-05-29 </td>
-                <td> Unpaid </td>
+                <th> <?php echo"$order_id"; ?> </th>
+                <td> <?php echo"$due_amount"; ?> Ft</td>
+                <td> <?php echo"$invoice_no"; ?> </td>
+                <td> <?php echo"$qty"; ?> </td>
+                <td> <?php echo"$size"; ?> </td>
+                <td> <?php echo"$order_date"; ?> </td>
+                <td> <?php echo"$order_status"; ?> </td>
 
                 <td>
 
-                <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm"> Confirm Paid </a>
+                <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="_self" class="btn btn-primary btn-sm"> Confirm Paid </a>
 
                 </td>
 
             </tr> <!-- tr finish -->
 
-
-
-            <tr> <!-- tr begin -->
-
-                <th> #1 </th>
-                <td> 16 000 Ft</td>
-                <td> 6253336 </td>
-                <td> 2 </td>
-                <td> Small </td>
-                <td> 2022-05-29 </td>
-                <td> Unpaid </td>
-
-                <td>
-
-                <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm"> Confirm Paid </a>
-
-                </td>
-
-            </tr> <!-- tr finish -->
-
-
-
-            <tr> <!-- tr begin -->
-
-                <th> #1 </th>
-                <td> 16 000 Ft</td>
-                <td> 6253336 </td>
-                <td> 2 </td>
-                <td> Small </td>
-                <td> 2022-05-29 </td>
-                <td> Unpaid </td>
-
-                <td>
-
-                <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm"> Confirm Paid </a>
-
-                </td>
-
-            </tr> <!-- tr finish -->
+            <?php } ?>
 
         </tbody> <!-- tbody finish -->
 

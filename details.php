@@ -10,10 +10,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Shop
+                            Bolt
                         </li>
                         <li>
                             <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a>
@@ -45,24 +45,24 @@
 
                                     <div class="carousel-inner"> <!-- carousel-inner begin -->
                                         <div class="item active">
-                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1 ?>" alt="Product Image 1"></center>
+                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1 ?>" alt="Termék fotó 1"></center>
                                         </div>
                                         <div class="item">
-                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img2 ?>" alt="Product Image 2"></center>
+                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img2 ?>" alt="Termék fotó 2"></center>
                                         </div>
                                         <div class="item">
-                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img3 ?>" alt="Product Image 3"></center>
+                                            <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img3 ?>" alt="Termék fotó 3"></center>
                                         </div>
                                     </div> <!-- carousel-inner finish -->
 
                                     <a href="#myCarousel" class="left carousel-control" data-slide="prev"> <!-- left carousel-control begin -->
                                         <span class="glyphicon  glyphicon-chevron-left"></span>
-                                        <span class="sr-only">Previous</span>
+                                        <span class="sr-only">Előző</span>
                                     </a> <!-- left carousel-control finish -->
 
                                     <a href="#myCarousel" class="right carousel-control" data-slide="next"> <!-- right carousel-control begin -->
                                         <span class="glyphicon  glyphicon-chevron-right"></span>
-                                        <span class="sr-only">Next</span>
+                                        <span class="sr-only">Következő</span>
                                     </a> <!-- right carousel-control finish -->
 
                                 </div> <!-- carousel slide finish -->
@@ -77,7 +77,7 @@
 
                                 <form action="details.php?add_cart=<?php echo $product_id ?>" class="form-horizontal" method="post"> <!-- form-horizontal begin -->
                                     <div class="form-group"> <!-- form-group begin -->
-                                        <label for="" class="col-md-5 control-label">Products Quantity</label>
+                                        <label for="" class="col-md-5 control-label">Mennyiség</label>
 
                                         <div class="col-md-7"> <!-- col-md-7 begin -->
 
@@ -94,15 +94,15 @@
                                     </div> <!-- form-group finish -->
 
                                     <div class="form-group"> <!-- form-group begin -->
-                                        <label class="col-md-5 control-label">Product Size</label>
+                                        <label class="col-md-5 control-label">Méret</label>
 
                                         <div class="col-md-7"> <!-- col-md-7 begin -->
 
                                             <select name="product_size" class="form-control" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')" required> <!-- form-control begin -->
-                                                <option disabled selected>Select a Size</option>
-                                                <option>Small</option>
-                                                <option>Medium</option>
-                                                <option>Large</option>
+                                                <option disabled selected>Válassz méretet</option>
+                                                <option>S</option>
+                                                <option>M</option>
+                                                <option>L</option>
                                             </select> <!-- form-control finish -->
 
                                         </div> <!-- col-md-7 finish -->
@@ -110,7 +110,7 @@
                                     </div> <!-- form-group finish -->
 
                                     <p class="price"><?php echo $pro_price ?> Ft</p>
-                                    <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
+                                    <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Kosárba</button></p>
 
                                 </form> <!-- form-horizontal finish -->
                             </div> <!-- box finish -->
@@ -119,19 +119,19 @@
 
                                 <div class="col-xs-4"> <!-- col-xs-4 begin -->
                                     <a data-target="#myCarousel" data-slide-to="0" href="#" class="thumb"> <!-- thumb begin -->
-                                        <img src="admin_area/product_images/<?php echo $pro_img1 ?>" alt="Image 1" class="img-responsive">
+                                        <img src="admin_area/product_images/<?php echo $pro_img1 ?>" alt="Fotó 1" class="img-responsive">
                                     </a> <!-- thumb finish -->
                                 </div> <!-- col-xs-4 finish -->
 
                                 <div class="col-xs-4"> <!-- col-xs-4 begin -->
                                     <a data-target="#myCarousel" data-slide-to="1" href="#" class="thumb"> <!-- thumb begin -->
-                                        <img src="admin_area/product_images/<?php echo $pro_img2 ?>" alt="Image 2" class="img-responsive">
+                                        <img src="admin_area/product_images/<?php echo $pro_img2 ?>" alt="Fotó 2" class="img-responsive">
                                     </a> <!-- thumb finish -->
                                 </div> <!-- col-xs-4 finish -->
 
                                 <div class="col-xs-4"> <!-- col-xs-4 begin -->
                                     <a data-target="#myCarousel" data-slide-to="2" href="#" class="thumb"> <!-- thumb begin -->
-                                        <img src="admin_area/product_images/<?php echo $pro_img3 ?>" alt="Image 3" class="img-responsive">
+                                        <img src="admin_area/product_images/<?php echo $pro_img3 ?>" alt="Fotó 3" class="img-responsive">
                                     </a> <!-- thumb finish -->
                                 </div> <!-- col-xs-4 finish -->
 
@@ -143,7 +143,7 @@
 
                     <div class="box" id="details"> <!-- box begin -->
 
-                            <h4>Product Details</h4>
+                            <h4>Termék leírása</h4>
 
                         <p>
 
@@ -151,12 +151,12 @@
 
                         </p>
 
-                            <h4>Size</h4>
+                            <h4>Méret</h4>
 
                             <ul>
-                                <li>Small</li>
-                                <li>Medium</li>
-                                <li>Large</li>
+                                <li>S</li>
+                                <li>M</li>
+                                <li>L</li>
                             </ul>
 
                             <hr>
@@ -166,7 +166,7 @@
                     <div id="row same-height-row"> <!-- #row same-height-row begin -->
                         <div class="col-md-3 col-sm-6"> <!-- col-md-3 col-sm-6 begin -->
                             <div class="box same-height headline"> <!-- box same-height headline begin -->
-                                <h3 class="text-center">Products You Maybe Like</h3>
+                                <h3 class="text-center">Ez is érdekelhet</h3>
                             </div> <!-- box same-height headline begin -->
                         </div> <!-- col-md-3 col-sm-6 finish -->
 

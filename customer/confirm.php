@@ -1,3 +1,24 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['customer_email'])){
+
+        echo "<script>window.open('../checkout.php','_self')</script>";
+
+    }else{
+
+    include("includes/db.php");
+    include("includes/functions/functions.php");
+
+    if(isset($_GET['order_id'])){
+
+       $order_id = $_GET['order_id'];
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,8 +36,21 @@
 
                 <div class="col-md-6 offer"> <!-- col-md-6 offer begin -->
 
-                    <a href="#" class="btn btn-success btn-sm">Welcome</a>
-                    <a href="checkout.php">4 Items in your Cart | Cart Total Price: $300</a>
+                    <a href="#" class="btn btn-success btn-sm">
+                        <?php 
+
+                            if(!isset($_SESSION['customer_email'])){
+
+                                echo "Üdv, Vendég";
+
+                            }else{
+
+                                echo "Üdv, " . $_SESSION['customer_email'] . " ";
+
+                            }
+                        
+                        ?></a>
+                    <a href="checkout.php"> <?php items(); ?> termék van a kosaradban | Termékek ára: <?php total_price(); ?></a>
 
                 </div> <!-- col-md-6 offer finish -->
 
@@ -25,16 +59,30 @@
                     <ul class="menu"> <!-- cmenu begin -->
                         
                         <li>
-                            <a href="../customer_register.php">Register</a>
+                            <a href="../customer_register.php">Regisztráció</a>
                         </li>
                         <li>
-                            <a href="my_account.php">My Account</a>
+                            <a href="my_account.php?my_orders">Fiókom</a>
                         </li>
                         <li>
-                            <a href="../cart.php">Go To Cart</a>
+                            <a href="../cart.php">Kosár</a>
                         </li>
                         <li>
-                            <a href="../checkout.php">Login</a>
+                            <a href="../checkout.php">
+                                <?php 
+
+                                    if(!isset($_SESSION['customer_email'])){
+
+                                        echo "<a href='../checkout.php'> Bejelentkezés </a>";
+
+                                    }else{
+
+                                        echo "<a href='../logout.php'> Kijelentkezés </a>";
+
+                                    }
+                                
+                                ?>
+                            </a>
                         </li>
 
                     </ul> <!-- cmenu finish -->
@@ -75,29 +123,29 @@
                         <ul class="nav navbar-nav left"> <!-- nav navbar-nav left begin -->
 
                         <li>
-                            <a href="../index.php">Home</a>
+                            <a href="../index.php">Főoldal</a>
                         </li>
                         <li>
-                            <a href="../shop.php">Shop</a>
+                            <a href="../shop.php">Bolt</a>
                         </li>
                         <li class="active">
-                            <a href="my_account.php">My Account</a>
+                            <a href="my_account.php?my_orders">Fiókom</a>
                         </li>
                         <li>
-                            <a href="../cart.php">Shopping Cart</a>
+                            <a href="../cart.php">Kosár</a>
                         </li>
                         <li>
-                            <a href="../contact.php">Contact Us</a>
+                            <a href="../contact.php">Kapcsolat</a>
                         </li>
 
                         </ul> <!-- nav navbar-nav left finish -->
 
                     </div> <!-- padding-nav finish -->
 
-                    <a href="cart.php" class="btn navbar-btn btn-primary right"> <!-- btn navbar-btn btn-primary right begin -->
+                    <a href="../cart.php" class="btn navbar-btn btn-primary right"> <!-- btn navbar-btn btn-primary right begin -->
                 
                         <i class="fa fa-shopping-cart"></i>
-                        <span>4 Items in Your Cart</span>
+                        <span><?php items(); ?> termék van a kosaradban</span>
 
                     </a>  <!-- btn navbar-btn btn-primary right finish -->
 
@@ -119,7 +167,7 @@
 
                             <div class="input-group"> <!-- input-group begin -->
 
-                                <input type="text" class="form-control" placeholder="Search" name="user_query" required>
+                                <input type="text" class="form-control" placeholder="Keresés" name="user_query" required>
 
                                 <span class="input-group-btn"> <!-- input-group-btn begin -->
                                 <button type="submit" name="search" value="Search" class="btn btn-primary"> <!-- btn btn-primary begin -->
@@ -147,10 +195,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            My Account
+                            Fiókom
                         </li>
                     </ul> <!-- breadcrumb finish -->
 
@@ -171,7 +219,7 @@
 
                         <h1 align="center"> Please confirm your payment</h1>
 
-                        <form action="confirm.php" method="post" enctype="multipart/form-data"> <!-- form begin -->
+                        <form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post" enctype="multipart/form-data"> <!-- form begin -->
 
                             <div class="form-group"> <!-- form-group begin -->
 
@@ -195,11 +243,11 @@
 
                                 <select name="payment_mode" class="form-control"> <!-- form-control begin -->
 
-                                    <option> Select Payment Mode</option>
-                                    <option>Készpénz</option>
-                                    <option>Átutalás</option>
+                                    <option>Select Payment Mode</option>
+                                    <option>Keszpenz</option>
+                                    <option>Atutalas</option>
                                     <option>PayPal</option>
-                                    <option>Ajéndékkártya</option>
+                                    <option>Ajandekkartya</option>
 
                                 </select> <!-- form-control finish -->
 
@@ -223,7 +271,7 @@
 
                             <div class="text-center"> <!-- text-center begin -->
 
-                                <button class="btn btn-primary btn-lg"> <!-- btn btn-primary btn-lg begin -->
+                                <button class="btn btn-primary btn-lg" name="confirm_payment"> <!-- btn btn-primary btn-lg begin -->
 
                                     <i class="fa fa-user md"></i> Confirm Payment
 
@@ -232,6 +280,45 @@
                             </div> <!-- text-center finish -->
 
                         </form> <!-- form finish -->
+
+                        <?php 
+
+                            if(isset($_POST['confirm_payment'])){
+
+                                $update_id = $_GET['update_id'];
+
+                                $invoice_no = $_POST['invoice_no'];
+                                $amount = $_POST['amount_sent'];
+                                $payment_mode = $_POST['payment_mode'];
+                                $ref_no = $_POST['ref_no'];
+                                $code = $_POST['code'];
+                                $payment_date = $_POST['date'];
+
+                                $complete = "Complete";
+
+                                $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date')";
+
+                                $run_payment = mysqli_query($con,$insert_payment);
+
+                                $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+
+                                $run_customer_order = mysqli_query($con,$update_customer_order);
+
+                                $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+
+                                $run_pending_order = mysqli_query($con,$update_pending_order);
+
+                                if($run_pending_order){
+
+                                    echo "<script>alert('Thank you for purchasing, your orders will be completed within 24 hours work')</script>";
+                                    echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+
+                                }
+
+
+                            }
+                        
+                        ?>
 
                     </div><!-- box finish -->
 
@@ -251,3 +338,5 @@
 
     </body>
 </html>
+
+<?php } ?>

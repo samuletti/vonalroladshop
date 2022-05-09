@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Insert Products </title>
+    <title> Új Termék </title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
@@ -24,7 +24,7 @@
 
                 <li class="active"> <!-- li active begin -->
 
-                    <i class="fa fa-dashboard"></i> Dashboard <!-- vagy "Insert Productsi" -->
+                    <i class="fa fa-dashboard"></i> Kezelőfelület <!-- vagy "Insert Products" -->
 
                 </li> <!-- li active finish -->
 
@@ -44,7 +44,7 @@
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Insert Product
+                        <i class="fa fa-money fa-fw"></i> Termék beszúrása
 
                     </h3> <!-- panel-title begin -->
 
@@ -58,7 +58,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Title </label>
+                        <label class="col-md-3 control-label"> Termék neve </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_title" type="text" class="form-control" required>
@@ -69,12 +69,12 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Category </label>
+                        <label class="col-md-3 control-label"> Termék típusa </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <select name="product_cat" class="form-control"> <!-- form-control begin -->
 
-                                <option> Select a Category Product </option>
+                                <option> Válassz... </option>
                                 <?php 
 
                                     $get_p_cats = "select * from product_categories";
@@ -103,12 +103,12 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Category </label>
+                        <label class="col-md-3 control-label"> Kategória </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <select name="cat" class="form-control"> <!-- form-control begin -->
 
-                                <option> Select a Category </option>
+                                <option> Válassz... </option>
                                 <?php 
 
                                     $get_cat = "select * from categories";
@@ -137,7 +137,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Image 1 </label>
+                        <label class="col-md-3 control-label"> Termék Fotó 1 </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_img1" type="file" class="form-control" required>
@@ -148,7 +148,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Image 2 </label>
+                        <label class="col-md-3 control-label"> Termék Fotó 2 </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_img2" type="file" class="form-control">
@@ -159,7 +159,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Image 3 </label>
+                        <label class="col-md-3 control-label"> Termék Fotó 3 </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_img3" type="file" class="form-control">
@@ -170,7 +170,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Price </label>
+                        <label class="col-md-3 control-label"> Termék ára </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_price" type="text" class="form-control" required>
@@ -181,7 +181,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Keywords </label>
+                        <label class="col-md-3 control-label"> Kulcsszavak </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_keywords" type="text" class="form-control" required>
@@ -192,7 +192,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Product Description </label>
+                        <label class="col-md-3 control-label"> Termék leírása </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <textarea name="product_desc" cols="19" rows="10" class="form-control"></textarea>

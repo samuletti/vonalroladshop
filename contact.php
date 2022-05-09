@@ -11,10 +11,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Contact us
+                            Kapcsolat
                         </li>
                     </ul> <!-- breadcrumb finish -->
 
@@ -38,11 +38,19 @@
 
                             <center> <!-- center begin -->
 
-                                <h2> Feel Free to Contact Us </h2>
+                                <h2> Keress minket bizalommal! </h2>
 
                                 <p class="text-muted"> <!-- text-muted begin -->
 
-                                    If you have any question, feel free to contact us. Our Costumer Service work <strong>24/7</strong>
+                                Ha olyan dolgot álmodtál meg vonalrajzzal kapcsolatban, amit nem találsz itt, akkor vedd fel velünk a kapcsolatot, és keresünk rá együtt megoldást!
+
+                                </p> <!-- text-muted finish -->
+
+                                <hr>
+
+                                <p class="text-muted"> <!-- text-muted begin -->
+
+                                Bármilyen felmerülő kérdés/kérés esetén keress minket bizalommal a lenti elérhetőségek bármelyikén!
 
                                 </p> <!-- text-muted finish -->
 
@@ -52,28 +60,28 @@
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Name</label>
+                                    <label>Név:</label>
                                     <input type="text" class="form-control" name="name" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Email</label>
+                                    <label>E-mail cím:</label>
                                     <input type="email" class="form-control" name="email" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Subject</label>
+                                    <label>Tárgy:</label>
                                     <input type="text" class="form-control" name="subject" required>
 
                                 </div> <!-- form-group finish -->
                                 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Message</label>
+                                    <label>Üzenet:</label>
                                     <textarea name="message" class="form-control" required></textarea>
 
                                 </div> <!-- form-group finish -->
@@ -82,7 +90,7 @@
 
                                     <button type="submit" name="submit" class="btn btn-primary">
 
-                                    <i class="fa fa-user-md"></i> Send message </button>
+                                    <i class="fa fa-user-md"></i> Üzenet küldése </button>
 
                                 </div> <!-- text-center finish -->
                                 
@@ -99,7 +107,7 @@
                                     $sender_subject = $_POST['subject'];
                                     $sender_message = $_POST['message'];
                                     $receiver_email = "vonalrolad@gmail.com";
-                                    $message_to_send = "From: " . $sender_name . " The message is: " . $sender_message . " Sender e-mail: ". $sender_email;
+                                    $message_to_send = "Új üzenet tőle: " . $sender_name . " Az üzenet: " . $sender_message . " A feladó e-mail címe: ". $sender_email;
 
                                     mail($receiver_email,$sender_subject,$message_to_send);
 
@@ -107,15 +115,15 @@
 
                                     $email = $_POST['email'];
 
-                                    $subject = "We got your message";
+                                    $subject = "Köszönjük az üzeneted!";
 
-                                    $msg = "From: vonalrolad@gmail.com The message is: Thanks for sending us message. We will contact you as soon as possible!";
+                                    $msg = "Új üzenet tőle: vonalrolad@gmail.com Az üzenet: Köszönjük az üzeneted! Hamarosan felvesszük Veled a kapcsolatot!";
 
                                     //$from = "vonalrolad@gmail.com";
 
                                     mail($sender_email,$subject,$msg);
 
-                                    echo "<h2 align='center'> Your message is sent successfully </h2>";
+                                    echo "<h2 align='center'> Üzenet sikeresen elküldve! </h2>";
 
                                 }
                             

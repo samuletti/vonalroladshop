@@ -70,14 +70,14 @@
                 <a href="#myCarousel" class="left carousel-control" data-slide="prev"> <!-- left carousel-control begin -->
 
                     <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Előző</span>
 
                 </a> <!-- left carousel-control finish -->
 
                 <a href="#myCarousel" class="right carousel-control" data-slide="next"> <!-- right carousel-control begin -->
 
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Következő</span>
 
                 </a> <!-- right carousel-control finish -->
 
@@ -87,71 +87,11 @@
 
         </div> <!-- container finish -->
 
-        <div id="advantages"> <!-- #advanteges begin -->
+        <div class="container"> <!-- container begin -->
 
-            <div class="container"> <!-- container begin -->
+            <p>Bemutatkozó leírás Lorem ipsum, dolor sit amet consectetur adipisicing elit. A impedit quis porro, accusamus unde commodi, eaque excepturi repudiandae dolores ab, exercitationem adipisci est totam! Maxime, sunt? Nobis id fugit quas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit mollitia asperiores aliquam repudiandae? In maxime dolorum sed quidem assumenda rem, ad, non similique culpa quod minus adipisci distinctio, porro magni.</p>
 
-                <div class="same-height row"> <!-- same-height-row begin -->
-
-                    <div class="col-sm-4"> <!-- col-sm-4 begin -->
-
-                        <div class="box same-height"> <!-- box same-height begin -->
-
-                            <div class="icon"> <!-- icon begin -->
-
-                                <i class="fa fa-heart"></i>
-
-                            </div> <!-- icon finish -->
-
-                            <h3><a href="#">Best Offer</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                        </div> <!-- box same-height finish -->
-
-                    </div> <!-- col-sm-4 finish -->
-
-                    <div class="col-sm-4"> <!-- col-sm-4 begin -->
-
-                        <div class="box same-height"> <!-- box same-height begin -->
-
-                            <div class="icon"> <!-- icon begin -->
-
-                                <i class="fa fa-tag"></i>
-
-                            </div> <!-- icon finish -->
-
-                            <h3><a href="#">Best Prices</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                        </div> <!-- box same-height finish -->
-
-                    </div> <!-- col-sm-4 finish -->
-                    
-                    <div class="col-sm-4"> <!-- col-sm-4 begin -->
-
-                        <div class="box same-height"> <!-- box same-height begin -->
-
-                            <div class="icon"> <!-- icon begin -->
-
-                                <i class="fa fa-thumbs-up"></i>
-
-                            </div> <!-- icon finish -->
-
-                            <h3><a href="#">100% original Products</a></h3>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                        </div> <!-- box same-height finish -->
-
-                    </div> <!-- col-sm-4 finish -->
-
-                </div> <!-- same-height-row finish -->
-
-            </div> <!-- container finish -->
-
-        </div> <!-- #advanteges finish -->
+        </div> <!-- container finish -->
 
         <div id="hot"> <!-- #hot begin -->
 
@@ -162,7 +102,7 @@
                     <div class="col-md-12"> <!-- col-md-12 begin -->
 
                         <h2>
-                            Our Latest Products
+                            Legújabb termékek
                         </h2>
                         
                     </div> <!-- col-md-12 finish -->

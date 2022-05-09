@@ -2,19 +2,44 @@
 
     <div class="panel-heading"> <!-- panel-heading begin -->
 
-        <center> <!-- center begin -->
+        <?php 
 
-        <img src="customer_images/profile_pic.jpg" alt="VonalRólad Profilkép">
+            $customer_session = $_SESSION['customer_email'];
 
-        </center> <!-- center finish -->
+            $get_customer = "select * from customers where customer_email='$customer_session'";
 
-        <br/>
+            $run_customer = mysqli_query($con,$get_customer);
 
-        <h3 align="center" class="panel-title"> <!-- panel-title begin -->
+            $row_customer = mysqli_fetch_array($run_customer);
 
-            Name: R4JGSN
+            $customer_image = $row_customer['customer_profile'];
+            $customer_name = $row_customer['customer_name'];
 
-        </h3> <!-- panel-title finish -->
+            if(!isset($_SESSION['customer_email'])){
+
+            }else{
+
+                echo "
+
+                    <center>
+
+                        <img src='customer_images/$customer_image' class='img-responsive'>
+
+                    </center>
+
+                    <br/>
+
+                    <h3 class='panel-title' align='center'>
+
+                        Name: $customer_name
+
+                    </h3>
+                
+                ";
+
+            }
+        
+        ?>
 
     </div> <!-- panel-heading finish -->
 
@@ -25,7 +50,7 @@
             <li class="<?php if(isset($_GET['my_orders'])){echo"active";} ?>">
                 <a href="my_account.php?my_orders">
 
-                    <i class="fa fa-list"></i> My Orders
+                    <i class="fa fa-list"></i> Rendeléseim
 
                 </a>
             </li>
@@ -33,7 +58,23 @@
             <li class="<?php if(isset($_GET['pay_offline'])){echo"active";} ?>">
                 <a href="my_account.php?pay_offline">
 
-                    <i class="fa fa-bolt"></i> Pay Offline
+                    <i class="fa fa-bolt"></i> Fizetés
+
+                </a>
+            </li>
+
+            <li class="<?php if(isset($_GET['upload_pic'])){echo"active";} ?>">
+                <a href="my_account.php?upload_pic">
+
+                    <i class="fa fa-camera"></i> Fotó feltöltése
+
+                </a>
+            </li>
+
+            <li class="<?php if(isset($_GET['download_draw'])){echo"active";} ?>">
+                <a href="my_account.php?download_draw">
+
+                    <i class="fa fa-image"></i> Rajz letöltése
 
                 </a>
             </li>
@@ -41,7 +82,7 @@
             <li class="<?php if(isset($_GET['edit_account'])){echo"active";} ?>">
                 <a href="my_account.php?edit_account">
 
-                    <i class="fa fa-pencil"></i> Edit Account
+                    <i class="fa fa-pencil"></i> Fiók szerkesztése
 
                 </a>
             </li>
@@ -49,7 +90,7 @@
             <li class="<?php if(isset($_GET['change_pass'])){echo"active";} ?>">
                 <a href="my_account.php?change_pass">
 
-                    <i class="fa fa-lock"></i> Change Password
+                    <i class="fa fa-lock"></i> Jelszó módosítása
 
                 </a>
             </li>
@@ -57,7 +98,7 @@
             <li class="<?php if(isset($_GET['delete_account'])){echo"active";} ?>">
                 <a href="my_account.php?delete_account">
 
-                    <i class="fa fa-trash-o"></i> Delete Account
+                    <i class="fa fa-trash-o"></i> Fiók törlése
 
                 </a>
             </li>
@@ -65,7 +106,7 @@
             <li>
                 <a href="logout.php">
 
-                    <i class="fa fa-sign-out"></i> Log Out
+                    <i class="fa fa-sign-out"></i> Kijelentkezés
 
                 </a>
             </li>

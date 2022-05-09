@@ -11,10 +11,10 @@
 
                     <ul class="breadcrumb"> <!-- breadcrumb begin -->
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Shop
+                            Bolt
                         </li>
                     </ul> <!-- breadcrumb finish -->
 
@@ -38,8 +38,8 @@
                             echo "
                                 
                                 <div class='box'> <!-- box begin -->
-                                    <h1>Shop</h1>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi itaque voluptatum nihil dolore voluptates, distinctio quos molestias laborum ea molestiae, alias perspiciatis amet, at quo illum laboriosam? Alias, porro.</p>
+                                    <h1>VonalRólad Bolt</h1>
+                                    <p>Rövid leírás ... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi itaque voluptatum nihil dolore voluptates, distinctio quos molestias laborum ea molestiae, alias perspiciatis amet, at quo illum laboriosam? Alias, porro.</p>
                                 </div> <!-- box finish -->
                                 
                             ";
@@ -154,7 +154,7 @@
 
                                 <li>
                                 
-                                    <a href='shop.php?page=1'> ".'First Page'." </a>
+                                    <a href='shop.php?page=1'> ".'Első oldal'." </a>
                                 
                                 </li>
                             
@@ -178,7 +178,7 @@
 
                                 <li>
                                 
-                                    <a href='shop.php?page=$total_pages'> ".'Last Page'." </a>
+                                    <a href='shop.php?page=$total_pages'> ".'Utolsó oldal'." </a>
                                 
                                 </li>
                             
