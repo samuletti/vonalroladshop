@@ -19,12 +19,15 @@
             <tr> <!-- tr begin -->
 
                 <th> ID: </th>
-                <th> Fizetendő: </th>
+                <th> Fiz.: </th>
                 <th> Számla: </th>
-                <th> Mennyiség: </th>
+                <th> Termék: </th>
+                <th> Db: </th>
                 <th> Méret: </th>
-                <th> Rendelés dátuma: </th>
-                <th> Fizetve?: </th>
+                <th> Szín: </th>
+                <th> Fénykép: </th>
+                <th> Rajz: </th>
+                <th> Dátum: </th>
                 <th> Állapot: </th>
 
             </tr> <!-- tr finish -->
@@ -58,6 +61,10 @@
                     $invoice_no = $row_orders['invoice_no'];
                     $qty = $row_orders['qty'];
                     $size = $row_orders['size'];
+                    $color = $row_orders['color'];
+                    $pic = $row_orders['pic_name'];
+                    $draw = $row_orders['draw_name'];
+                    $prod = $row_orders['prod_title'];
                     $order_date = substr($row_orders['order_date'],0,11);
                     $order_status = $row_orders['order_status'];
 
@@ -80,16 +87,14 @@
                 <th> <?php echo"$order_id"; ?> </th>
                 <td> <?php echo"$due_amount"; ?> Ft</td>
                 <td> <?php echo"$invoice_no"; ?> </td>
+                <td> <?php echo"$prod"; ?> </td>
                 <td> <?php echo"$qty"; ?> </td>
                 <td> <?php echo"$size"; ?> </td>
+                <td> <?php echo"$color"; ?> </td>
+                <td> <?php echo"$pic"; ?> </td>
+                <td> <?php echo"$draw"; ?> </td>
                 <td> <?php echo"$order_date"; ?> </td>
                 <td> <?php echo"$order_status"; ?> </td>
-
-                <td>
-
-                <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="_self" class="btn btn-primary btn-sm"> Confirm Paid </a>
-
-                </td>
 
             </tr> <!-- tr finish -->
 

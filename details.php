@@ -1,5 +1,7 @@
 <?php 
 
+    session_start();
+    $customer_email = $_SESSION['customer_email'];
     include("includes/header.php");
 
 ?>
@@ -13,7 +15,7 @@
                             <a href="index.php">Főoldal</a>
                         </li>
                         <li>
-                            Bolt
+                        <a href="shop.php">Bolt</a>
                         </li>
                         <li>
                             <a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a>
@@ -92,22 +94,121 @@
                                         </div> <!-- col-md-7 finish -->
 
                                     </div> <!-- form-group finish -->
+                                    <?php
+                                    if($product_id == 9){
+                                        echo"
+                                        <div class='form-group'> <!-- form-group begin -->
+                                            <label class='col-md-5 control-label'>Méret</label>
 
-                                    <div class="form-group"> <!-- form-group begin -->
-                                        <label class="col-md-5 control-label">Méret</label>
+                                            <div class='col-md-7'> <!-- col-md-7 begin -->
 
-                                        <div class="col-md-7"> <!-- col-md-7 begin -->
+                                                <select name='product_size' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                                    <option disabled selected>Válassz méretet</option>
+                                                    <option>S</option>
+                                                    <option>M</option>
+                                                    <option>L</option>
+                                                </select> <!-- form-control finish -->
 
-                                            <select name="product_size" class="form-control" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')" required> <!-- form-control begin -->
-                                                <option disabled selected>Válassz méretet</option>
-                                                <option>S</option>
-                                                <option>M</option>
-                                                <option>L</option>
-                                            </select> <!-- form-control finish -->
+                                            </div> <!-- col-md-7 finish -->
 
-                                        </div> <!-- col-md-7 finish -->
+                                        </div> <!-- form-group finish -->";
+                                    }elseif($product_id == 8){
+                                        echo"
+                                        <div class='form-group'> <!-- form-group begin -->
+                                            <label class='col-md-5 control-label'>Méret</label>
 
-                                    </div> <!-- form-group finish -->
+                                            <div class='col-md-7'> <!-- col-md-7 begin -->
+
+                                                <select name='product_size' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                                    <option disabled selected>Válassz méretet</option>
+                                                    <option>A3</option>
+                                                    <option>A4</option>
+                                                </select> <!-- form-control finish -->
+
+                                            </div> <!-- col-md-7 finish -->
+                                            </div> <!-- form-group finish -->
+
+                                            <div class='form-group'> <!-- form-group begin -->
+                                            <label class='col-md-5 control-label'>Szín</label>
+
+                                            <div class='col-md-7'> <!-- col-md-7 begin -->
+
+                                                <select name='product_color' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                                    <option disabled selected>Válassz színt</option>
+                                                    <option>fekete</option>
+                                                    <option>fehér</option>
+                                                </select> <!-- form-control finish -->
+                                                
+                                            </div> <!-- col-md-7 finish -->
+
+                                        </div> <!-- form-group finish -->";
+                                    }elseif($product_id == 6){
+                                        echo"
+                                        <div class='form-group'> <!-- form-group begin -->
+                                            <label class='col-md-5 control-label'>Méret</label>
+
+                                            <div class='col-md-7'> <!-- col-md-7 begin -->
+
+                                                <input type='text' name='product_size' class='form-control' placeholder='Telefon típusa' required> <!-- form-control begin -->
+                                                </input> <!-- form-control finish -->
+
+                                            </div> <!-- col-md-7 finish -->
+
+                                        </div> <!-- form-group finish -->";
+                                    }
+
+                                    $customer_email = $_SESSION['customer_email'];
+                                    $get_customer = "select * from customers where customer_email='$customer_email'";
+                                    $run_customers = mysqli_query($con,$get_customer);
+                                    $row_customer = mysqli_fetch_array($run_customers);
+                                    $customer_id = $row_customer['customer_id'];
+
+                                    if($p_cat_id == 1){
+                                        /* digitális, tehát a fotókat listázza ki */
+                                        echo "
+                                        <div class='form-group'> <!-- form-group begin -->
+                                    <label class='col-md-5 control-label'>Fotó</label>
+
+                                    <div class='col-md-7'> <!-- col-md-7 begin -->
+                                        <select name='product_pic' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                            <option disabled selected>Válassz fényképet</option>
+                                        ";
+                                        $get_pics = "select * from customer_pics where customer_id='$customer_id'";
+                                        $run_pics = mysqli_query($con,$get_pics);
+                                        while($row_pics=mysqli_fetch_array($run_pics)){
+
+                                            $pic_id = $row_pics['pic_id'];
+            
+                                            $pic_name = $row_pics['pic_name'];
+
+                                            echo "<option>$pic_name</option>";}
+                                    }
+                                    echo "</select> <!-- form-control finish-->";
+                                    if($p_cat_id > 1){
+                                        /* fizikai, tehát a rajzokat listázza ki */
+                                        echo "
+                                        <div class='form-group'> <!-- form-group begin -->
+                                    <label class='col-md-5 control-label'>Rajz</label>
+                                    <div class='col-md-7'> <!-- col-md-7 begin -->
+
+                                        <select name='product_draw' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                            <option disabled selected>Válassz rajzot</option>
+                                        ";
+                                        $get_draws = "select * from drawings where customer_id='$customer_id'";
+                                        $run_draws = mysqli_query($con,$get_draws);
+                                        while($row_draws=mysqli_fetch_array($run_draws)){
+
+                                            $draw_id = $row_draws['draw_id'];
+            
+                                            $draw_name = $row_draws['draw_name'];
+
+                                            echo "<option>$draw_name</option>";}
+                                    }
+                                    echo "</select> <!-- form-control finish-->
+                                    </div> <!-- col-md-7 finish -->
+
+                                    </div> <!-- form-group finish -->";
+                                    ?>
 
                                     <p class="price"><?php echo $pro_price ?> Ft</p>
                                     <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Kosárba</button></p>
@@ -137,7 +238,7 @@
 
                             </div> <!-- row finish -->
 
-                        </div> <!-- col-sm-6 begin -->
+                        </div> <!-- col-sm-6 finish -->
 
                     </div> <!-- row finish -->
 
@@ -145,21 +246,13 @@
 
                             <h4>Termék leírása</h4>
 
+                            <hr>
+
                         <p>
 
                         <?php echo $pro_desc ?>
 
                         </p>
-
-                            <h4>Méret</h4>
-
-                            <ul>
-                                <li>S</li>
-                                <li>M</li>
-                                <li>L</li>
-                            </ul>
-
-                            <hr>
 
                     </div> <!-- box finish -->
 

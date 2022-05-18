@@ -4,6 +4,12 @@
 
 ?>
 
+        <div class="container"> <!-- container begin -->
+
+            <h1 align="center">A VonalRólad új, különleges formában jeleníti meg kedvenc fotóidat, kézzel készítve, vonalrajzként!</h1>
+
+        </div> <!-- container finish -->
+
         <div class="container" id="slider"> <!-- container begin -->
             
             <div class="col-md-12"> <!-- col-md-12 begin -->
@@ -12,10 +18,10 @@
             
                 <ol class="carousel-indicators"><!-- carousel-indicators begin -->
                     
-                    <li class="active" data-target="#myCarousel" data-slide-to="0"><li>
-                    <li data-target="#myCarousel" data-slide-to="1"><li>
-                    <li data-target="#myCarousel" data-slide-to="2"><li>
-                    <li data-target="#myCarousel" data-slide-to="3"><li>
+                    <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
 
                 </ol> <!-- carousel-indicators finish -->
                 
@@ -84,12 +90,6 @@
             </div> <!-- carousel slide finish -->
 
             </div> <!-- col-md-12 finish -->
-
-        </div> <!-- container finish -->
-
-        <div class="container"> <!-- container begin -->
-
-            <p>Bemutatkozó leírás Lorem ipsum, dolor sit amet consectetur adipisicing elit. A impedit quis porro, accusamus unde commodi, eaque excepturi repudiandae dolores ab, exercitationem adipisci est totam! Maxime, sunt? Nobis id fugit quas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit mollitia asperiores aliquam repudiandae? In maxime dolorum sed quidem assumenda rem, ad, non similique culpa quod minus adipisci distinctio, porro magni.</p>
 
         </div> <!-- container finish -->
 

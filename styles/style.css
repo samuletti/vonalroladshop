@@ -5,11 +5,19 @@ Author          : R4JGSN - Samu Letícia Vivien
 
 /* General Styles */
 
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: #000000;
+}
+
 body {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.42857143;
-    color: #333333;
-    background: #f0f0f0;
+    color: black;
+    background: #e6d6d6;
     overflow-x: hidden;
     padding-bottom: 10px;
 }
@@ -17,7 +25,7 @@ body {
 /* Top Styles */
 
 #top{
-    background-color: #555555;
+    background-color: #977272;
     padding: 10px;
 }
 
@@ -27,6 +35,13 @@ body {
 
 #top .offer .btn{
     text-transform: uppercase;
+    color: #ffffff;
+    background: #7c5151;
+    border-color: #ffffff;
+}
+
+#top .offer .btn:hover{
+    background-color: #977272;
 }
 
 @media(max-width: 991px){
@@ -70,7 +85,7 @@ body {
 
 #top ul.menu > li + li:before{
     content: "|\00a0";
-    color: #f7f7f7;
+    color: #ffffff;
     padding: 0 5px;
 }
 
@@ -112,31 +127,24 @@ body {
 }
 
 .btn-primary{
-    color: rgb(255, 255, 255);
-    background: rgb(79,191,168);
-    border-color: rgb(65, 179, 156);
+    color: #ffffff;
+    background: #977272;
+    border-color: #a97f7f;
+}
+
+.btn-primary:hover{
+    color: #ffffff;
+    background: #7c5151;
+    border-color: #a97f7f;
 }
 
 #search .navbar-form{
     float: right;
 }
 
-#search{
-    clear: both;
-    border-top: solid 1px #9adacd;
-    text-align: right;
-}
-
-#search .navbar-form .input-group{
-    display: table;
-}
-
-#search .navbar-form .input-group .form-control{
-    width: 100%;
-}
-
 #slider{
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 /* advantages styles */
@@ -150,7 +158,6 @@ body {
     border: solid 1px #e6e6e6;
     box-sizing: border-box;
     padding: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
 }
 
 #advantages .box .icon{
@@ -176,7 +183,7 @@ body {
 }
 
 #advantages .box h3 a{
-    color: #4fbfa8;
+    color: red;
 }
 
 #advantages .box h3 a:hover{
@@ -194,7 +201,7 @@ body {
 #hot h2{
     font-size: 36px;
     font-weight: 400;
-    color: #4fbfa8;
+    color: #7c5151;
     text-align: center;
     text-transform: uppercase;
 }
@@ -246,22 +253,24 @@ body {
 }
 
 #content .product .text h3 a{
-    color:rgb(85, 85, 85);
+    color: #000000;
 }
 
 /* breadcrumb styles */
+
+.breadcrumb>li>a{
+    color: #000000;
+}
 
 .breadcrumb{
     padding: 8px 15px;
     margin-bottom: 20px;
     background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px rgba(0,0,0, .5);
 }
 
 .breadcrumb> li + li:before{
     content: ">\00a0";
-    color: #cccccc;
+    color: #000000;
 }
 @media(max-width:991px){
     .breadcrumb{
@@ -274,7 +283,6 @@ body {
 
 #content .panel.sidebar-menu{
     box-sizing: border-box;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
 }
 
 #content .panel.sidebar-menu ul.nav.category-menu{
@@ -326,12 +334,25 @@ body {
 
 #content #thumbs a{
     display: block;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
     border: 2px solid transparent;
 }
 
 #content .headline{
     height: 282px;
+}
+
+#content .box .btn-primary {
+    color: #ffffff;
+    background: #977272;
+    border-color: #a97f7f;
+    font-size: 20px;
+    padding: 12px;
+}
+
+#content .box .btn-primary:hover {
+    color: #ffffff;
+    background: #7c5151;
+    border-color: #a97f7f;
 }
 
 /* cart.php styles */
@@ -353,8 +374,8 @@ body {
     font-size: 18px;
 }
 .box .box-footer{
-    background-color: #f7f7f7;
-    margin: 30px -20px 20px;
+    background-color: #f5e9e9;
+    margin: 30px -10px 0px;
     padding: 20px;
     border: 1px solid #eeeeee;
 }
@@ -370,7 +391,7 @@ body {
 }
 
 .box .box-header{
-    background-color: #f7f7f7;
+    background-color: #f5e9e9;
     margin: -20px -20px 20px;
     padding: 20px;
     border: 1px solid #eeeeee;
@@ -403,7 +424,7 @@ body {
 /* footer styles */
 
 #footer{
-    background: #e6e6e6;
+    background: #f5e9e9;
     padding: 20px 0;
 }
 
@@ -437,13 +458,13 @@ body {
     font-size: 15px;
     text-align: center;
     vertical-align: bottom;
-    background: #555555;
+    background: #7c5151;
     text-decoration: none;
 }
 
 #footer .social a:hover{
     color: #dedede;
-    background: #777777;
+    background: #a97f7f;
 }
 
 /* copyright styles */
@@ -459,3 +480,28 @@ body {
     margin: 0px;
 }
 
+/* sidebar */
+
+.col-md-3 .panel-heading{
+    background-color: #977272;
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.col-md-3 .panel-body{
+    background-color: #ffffff;
+}
+
+.panel-body li.active>a{
+    background-color: #977272;
+    color: #ffffff;
+}
+
+.panel-body li.active>a:hover{
+    background-color: #7c5151;
+    color: #ffffff;
+}
+
+.panel-body li>a {
+    color: #000000;
+}

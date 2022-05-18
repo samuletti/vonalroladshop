@@ -135,54 +135,65 @@
 
     if(isset($_POST['register'])){
 
-        $c_name = $_POST['c_name'];
-        $c_email = $_POST['c_email'];
-        $c_pass = $_POST['c_pass'];
-        $c_country = $_POST['c_country'];
-        $c_city = $_POST['c_city'];
-        $c_contact = $_POST['c_contact'];
-        $c_address = $_POST['c_address'];
+        $cur_email = $_POST['c_email'];
 
-        $c_image = $_FILES['c_image']['name'];
-        $c_image_tmp = $_FILES['c_image']['tmp_name'];
+        $get_check = "select * from customers where customer_email='$cur_email'";
+        $run_check = mysqli_query($con,$get_check);
+        $count_rows = mysqli_num_rows($run_check);
 
-        $c_ip = getRealIpUser();
+        if($count_rows == 0){
 
-        /* $customer_id = "select customer_id from customers where customer_email='$c_email'"; */
+            $c_name = $_POST['c_name'];
+            $c_email = $_POST['c_email'];
+            $c_pass = $_POST['c_pass'];
+            $c_country = $_POST['c_country'];
+            $c_city = $_POST['c_city'];
+            $c_contact = $_POST['c_contact'];
+            $c_address = $_POST['c_address'];
 
-        mkdir("customer/customers/$c_email");
-        mkdir("customer/customers/$c_email/pics");
-        mkdir("customer/customers/$c_email/draws");
+            $c_image = $_FILES['c_image']['name'];
+            $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
+            $c_ip = getRealIpUser();
 
-        move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
+            /* $customer_id = "select customer_id from customers where customer_email='$c_email'"; */
 
-        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_profile,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+            mkdir("customer/customers/$c_email");
+            mkdir("customer/customers/$c_email/pics");
+            mkdir("customer/customers/$c_email/draws");
 
-        $run_customer = mysqli_query($con,$insert_customer);
+            move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
 
-        $sel_cart = "select * from cart where ip_add='$c_ip'";
+            $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_profile,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
 
-        $run_cart = mysqli_query($con,$sel_cart);
+            $run_customer = mysqli_query($con,$insert_customer);
 
-        $check_cart = mysqli_num_rows($run_cart);
+            $sel_cart = "select * from cart where ip_add='$c_ip'";
 
-        if($check_cart>0){
-            //register with item(s) in cart
+            $run_cart = mysqli_query($con,$sel_cart);
 
-            $_SESSION['customer_email']=$c_email;
+            $check_cart = mysqli_num_rows($run_cart);
 
-            echo "<script>window.open('cart.php'.'_self')</script>";
-            echo "<script>alert('Successful Registration!')</script>";
-            
+            if($check_cart>0){
+                //register with item(s) in cart
+
+                $_SESSION['customer_email']=$c_email;
+
+                echo "<script>window.open('cart.php'.'_self')</script>";
+                echo "<script>alert('Successful Registration!')</script>";
+                
+            }else{
+                //register with empty cart
+
+                $_SESSION['customer_email']=$c_email;
+
+                echo "<script>alert('Successful Registration!')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
+                
+            }
         }else{
-            //register with empty cart
-
-            $_SESSION['customer_email']=$c_email;
-
-            echo "<script>alert('Successful Registration!')</script>";
-            echo "<script>window.open('index.php','_self')</script>";
-            
+            echo "<script>alert('This email is already in use!')</script>";
+            echo "<script>window.open('customer_register.php','_self')</script>";
         }
 
     }

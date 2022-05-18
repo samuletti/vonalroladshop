@@ -1,5 +1,8 @@
 <?php 
 
+    session_start();
+    include("includes/db.php");
+
     if(!isset($_SESSION['admin_email'])){
 
         echo "<script>window.open('login.php','_self')</script>";
@@ -36,7 +39,7 @@
 
                     <div class="col-xs-9 text-right"> <!-- col-xs-9 text-right begin -->
                         <div class="huge"> <!-- huge begin -->
-                            17
+                            <?php echo $count_products; ?>
                         </div> <!-- huge finish -->
                         <div> Products </div>
                     </div> <!-- col-xs-9 text-right finish -->
@@ -76,7 +79,7 @@
 
                     <div class="col-xs-9 text-right"> <!-- col-xs-9 text-right begin -->
                         <div class="huge"> <!-- huge begin -->
-                            7
+                            <?php echo $count_customers; ?>
                         </div> <!-- huge finish -->
                         <div> Customers </div>
                     </div> <!-- col-xs-9 text-right finish -->
@@ -116,7 +119,7 @@
 
                     <div class="col-xs-9 text-right"> <!-- col-xs-9 text-right begin -->
                         <div class="huge"> <!-- huge begin -->
-                            5
+                            <?php echo $count_p_categories; ?>
                         </div> <!-- huge finish -->
                         <div> Product Categories </div>
                     </div> <!-- col-xs-9 text-right finish -->
@@ -156,7 +159,7 @@
 
                     <div class="col-xs-9 text-right"> <!-- col-xs-9 text-right begin -->
                         <div class="huge"> <!-- huge begin -->
-                            5
+                            <?php echo $count_pending_orders; ?>
                         </div> <!-- huge finish -->
                         <div> Orders </div>
                     </div> <!-- col-xs-9 text-right finish -->
@@ -206,9 +209,12 @@
                             <th> Order no: </th>
                             <th> Customer Email: </th>
                             <th> Invoice no: </th>
-                            <th> Product ID: </th>
+                            <th> Product Title: </th>
                             <th> Product Qty: </th>
                             <th> Product Size: </th>
+                            <th> Product Color: </th>
+                            <th> Picture Name: </th>
+                            <th> Drawing Name: </th>
                             <th> Status: </th>
                         </tr>
 
@@ -216,45 +222,59 @@
 
                         <tbody> <!-- tbody begin -->
 
-                            <tr> <!-- tr begin -->
-                                <td> 1 </td>
-                                <td> minta@email.hu </td>
-                                <td> 726t27tg2 </td>
-                                <td> 6 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                            </tr> <!-- tr finish -->
+                        <?php 
+
+                            $i = 0;
+
+                            $get_orders = "select * from pending_orders";
+
+                            $run_order = mysqli_query($con,$get_orders);
+
+                            while($row_order=mysqli_fetch_array($run_order)){
+
+                                $order_id = $row_order['order_id'];
+                                
+                                $c_id = $row_order['customer_id'];
+                                
+                                $prod_title = $row_order['prod_title'];
+                                
+                                $invoice_no = $row_order['invoice_no'];
+                                
+                                $qty = $row_order['qty'];
+                                
+                                $size = $row_order['size'];
+                                
+                                $color = $row_order['color'];
+                                
+                                $pic_name = $row_order['pic_name'];
+                                
+                                $draw_name = $row_order['draw_name'];
+                                
+                                $order_status = $row_order['order_status'];
+
+                                $get_customers = "select * from customers where customer_id='$c_id'";
+                                $run_order = mysqli_query($con,$get_customers);
+                                $row_customer = mysqli_fetch_array($run_order);
+                                $customer_email = $row_customer['customer_email'];
+
+                                $i++;
+                        
+                        ?>
 
                             <tr> <!-- tr begin -->
-                                <td> 1 </td>
-                                <td> minta@email.hu </td>
-                                <td> 726t27tg2 </td>
-                                <td> 6 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
+                                <td> <?php echo $order_id; ?> </td>
+                                <td> <?php echo $customer_email; ?> </td>
+                                <td> <?php echo $invoice_no; ?> </td>
+                                <td> <?php echo $prod_title; ?> </td>
+                                <td> <?php echo $qty; ?> </td>
+                                <td> <?php echo $size; ?> </td>
+                                <td> <?php echo $color; ?> </td>
+                                <td> <?php echo $pic_name; ?> </td>
+                                <td> <?php echo $draw_name; ?> </td>
+                                <td> <?php echo $order_status; ?> </td>
                             </tr> <!-- tr finish -->
 
-                            <tr> <!-- tr begin -->
-                                <td> 1 </td>
-                                <td> minta@email.hu </td>
-                                <td> 726t27tg2 </td>
-                                <td> 6 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                            </tr> <!-- tr finish -->
-
-                            <tr> <!-- tr begin -->
-                                <td> 1 </td>
-                                <td> minta@email.hu </td>
-                                <td> 726t27tg2 </td>
-                                <td> 6 </td>
-                                <td> 2 </td>
-                                <td> Large </td>
-                                <td> Pending </td>
-                            </tr> <!-- tr finish -->
+                            <?php } ?>
 
                         </tbody> <!-- tbody finish -->
 
@@ -282,12 +302,12 @@
             <div class="panel-body"> <!-- panel-body begin -->
                 <div class="mb-md thumb-info"> <!-- mb-md thumb-info begin -->
 
-                    <img src="admin_images/admin_info.png" alt="amdin-thumb-info" class="rounded img-responsive">
+                    <img src="admin_images/<?php echo $admin_image; ?>" alt="amdin-thumb-info" class="rounded img-responsive">
 
                     <div class="thumb-info-title"> <!-- thumb-info-title begin -->
 
-                        <span class="thumb-info-inner"> R4JGSN </span>
-                        <span class="thumb-info-type"> Student </span>
+                        <span class="thumb-info-inner"> <?php echo $admin_name; ?> </span>
+                        <span class="thumb-info-type"> <?php echo $admin_job; ?> </span>
 
                     </div> <!-- thumb-info-title finish -->
                 
@@ -295,9 +315,9 @@
 
                 <div class="mb-md"> <!-- mb-md begin -->
                     <div class="widget-content-expanded"> <!-- widget-content-expanded begin -->
-                        <i class="fa fa-user"></i> <span> Email: </span> r4jgsn@inf.elte.hu <br/>
-                        <i class="fa fa-flag"></i> <span> Country: </span> Magyarország <br/>
-                        <i class="fa fa-envelope"></i> <span> Contact: </span> 06302668248 <br/>
+                        <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
+                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country; ?> <br/>
+                        <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact; ?> <br/>
                     </div> <!-- widget-content-expanded finish -->
 
                     <hr class="dotted short">
@@ -306,9 +326,7 @@
 
                     <p> <!-- p begin -->
 
-                        This application is created by R4JGSN, if you willing to contact me, please click this link <br/>
-                        <a href="#">R4JGSN</a>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio perspiciatis, ratione illo reiciendis quam quis ullam officia architecto dolore dolores sit quibusdam ipsam rerum voluptas? Atque placeat rem dolor magnam!
+                    <?php echo $admin_about; ?>
 
                     </p> <!-- p finish -->
                     

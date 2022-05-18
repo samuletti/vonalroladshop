@@ -31,7 +31,7 @@
 
                     <h3 class='panel-title' align='center'>
 
-                        Name: $customer_name
+                        Név: $customer_name
 
                     </h3>
                 

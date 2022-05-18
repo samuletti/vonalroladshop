@@ -13,13 +13,11 @@
         $customer_id = $row_customer['customer_id'];
     
     ?>
+<center>
+    <a href="order.php?c_id=<?php echo $customer_id ?>" class="btn btn-primary"> <!-- btn navbar-btn btn-primary right begin -->
+                
+        <i class="fa fa-money"></i> Fizetés banki átutalással
 
-    <h1 class="text-center">Fizetés</h1>
-
-    <p class="lead text-center"> <!-- lead text-center begin -->
-
-        <a href="order.php?c_id=<?php echo $customer_id ?>"> Fizetés banki átutalással </a>
-
-    </p> <!-- lead text-center finish -->
-
+    </a>  <!-- btn navbar-btn btn-primary right finish -->
+</center>
 </div> <!-- box finish -->

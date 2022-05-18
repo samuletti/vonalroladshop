@@ -196,7 +196,7 @@
                     
                     getPCatPro(); 
                     
-                    getCatPro();
+                    /* getCatPro(); */
 
                     ?>
 

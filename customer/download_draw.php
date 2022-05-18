@@ -16,6 +16,7 @@
 ?>
 
 <h1 align="center"> Elkészült rajz letöltése </h1>
+<h3 align="center">Kattints a rajzra, a letöltéshez!</h3>
 
 <div class="row"> <!-- row begin -->
 

@@ -39,7 +39,13 @@
 
                             }else{
 
-                                echo "Üdv, " . $_SESSION['customer_email'] . " ";
+                                $customer_email = $_SESSION['customer_email'];
+                                $getcustomer = "select * from customers where customer_email='$customer_email'";
+                                $run_customer = mysqli_query($con,$getcustomer);
+                                $row_customer = mysqli_fetch_array($run_customer);
+                                $customer_name = $row_customer['customer_name'];
+
+                                echo "Üdv, " . $customer_name . " ";
 
                             }
                         
@@ -99,7 +105,7 @@
 
                     </a> <!-- navbar-brand home begin -->
 
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <!-- <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                         <span class="sr-only">Toggle Navigation</span>
                         <i class="fa fa-align-justify"></i>
                     </button>
@@ -107,7 +113,7 @@
                     <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
                         <span class="sr-only">Toggle Search</span>
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
 
                 </div> <!-- navbar-header finish -->
 
@@ -143,17 +149,17 @@
 
                     </a>  <!-- btn navbar-btn btn-primary right finish -->
 
-                    <div class="navbar-collapse collapse right"> <!-- navbar-collapse collapse right begin -->
+                    <!-- <div class="navbar-collapse collapse right"> <!1-- navbar-collapse collapse right begin -1->
 
-                        <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"> <!-- btn btn-primary navbar-btn begin -->
+                        <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"> <!-1- btn btn-primary navbar-btn begin -1->
 
                         <span class="sr-only">Toggle Search</span>
 
                         <i class="fa fa-search"></i>
 
-                        </button> <!-- btn btn-primary navbar-btn finish -->
+                        </button> <!-1- btn btn-primary navbar-btn finish --1>
 
-                    </div>  <!-- navbar-collapse collapse right finish -->
+                    </div>  <!1-- navbar-collapse collapse right finish -1-> -->
 
                     <div class="collapse clearfix" id="search"> <!-- collapse clearfix begin -->
                     

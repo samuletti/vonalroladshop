@@ -30,9 +30,16 @@
 
                         <?php
 
-                            $ip_add = getRealIpUser();
+                            /* $ip_add = getRealIpUser(); */
 
-                            $select_cart = "select * from cart where ip_add='$ip_add'";
+                            $customer_email = $_SESSION['customer_email'];
+
+                            $get_customer = "select * from customers where customer_email='$customer_email'";
+                            $run_customers = mysqli_query($con,$get_customer);
+                            $row_customer = mysqli_fetch_array($run_customers);
+                            $customer_id = $row_customer['customer_id'];
+
+                            $select_cart = "select * from cart where customer_id='$customer_id'";
 
                             $run_cart = mysqli_query($con,$select_cart);
 
@@ -53,6 +60,9 @@
                                         <th>Mennyiség</th>
                                         <th>Egységár</th>
                                         <th>Méret</th>
+                                        <th>Szín</th>
+                                        <th>Fénykép neve</th>
+                                        <th>Rajz neve</th>
                                         <th colspan="1">Törlés</th>
                                         <th colspan="2">Fizetendő</th>
                                     </tr>
@@ -67,11 +77,19 @@
 
                                     while($row_cart = mysqli_fetch_array($run_cart)) {
 
+                                        $cart_id = $row_cart['cart_id'];
+
                                         $pro_id = $row_cart['p_id'];
 
                                         $pro_size = $row_cart['size'];
                                         
                                         $pro_qty = $row_cart['qty'];
+
+                                        $pro_color = $row_cart['color'];
+
+                                        $pic_name = $row_cart['pic_name'];
+                                        
+                                        $draw_name = $row_cart['draw_name'];
 
                                         $get_products = "select * from products where product_id='$pro_id'";
 
@@ -118,8 +136,20 @@
                                         </td>
 
                                         <td>
+                                            <?php echo $pro_color; ?>
+                                        </td>
 
-                                            <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
+                                        <td>
+                                            <?php echo $pic_name; ?>
+                                        </td>
+
+                                        <td>
+                                            <?php echo $draw_name; ?>
+                                        </td>
+
+                                        <td>
+
+                                            <input type="checkbox" name="remove[]" value="<?php echo $cart_id; ?>">
 
                                         </td>
 
@@ -143,7 +173,7 @@
 
                                     <tr> <!-- tr begin -->
 
-                                        <th colspan="5">Összesen</th>
+                                        <th colspan="9">Összesen</th>
                                         <th colspan="2"><?php echo $total ?> Ft</th>
                                         
                                     </tr> <!-- tr finish -->
@@ -198,7 +228,7 @@
 
                                 foreach($_POST['remove'] as $remove_id){
 
-                                    $delete_product = "delete from cart where p_id='$remove_id'";
+                                    $delete_product = "delete from cart where cart_id='$remove_id'";
 
                                     $run_delete = mysqli_query($con,$delete_product);
 
@@ -281,12 +311,6 @@
 
                         </div> <!-- box-header finish -->
 
-                        <p class="text-muted"> <!-- text-muted begin -->
-
-                            A szállítási díj függ a választott kézbesítési módtól.
-
-                        </p> <!-- text-muted finish -->
-
                         <div class="table-responsive"> <!-- table-responsive begin -->
 
                             <table class="table"> <!-- table begin -->
@@ -300,13 +324,6 @@
 
                                     </tr>  <!-- tr finish -->
 
-                                    <tr> <!-- tr begin -->
-
-                                        <td> Szállítási díj </td>
-                                        <td> <?php echo $shipping_fee = 1400; ?> Ft </td>
-
-                                    </tr> <!-- tr finish -->
-
                                     <!--<tr> <'!-- tr begin --'>
 
                                         <td> Tax </td>
@@ -317,7 +334,7 @@
                                     <tr class="total"> <!-- tr begin -->
 
                                         <td> Összesen </td>
-                                        <th> <?php echo $total + $shipping_fee ?> Ft </th>
+                                        <th> <?php echo $total ?> Ft </th>
 
                                     </tr> <!-- tr finish -->
 

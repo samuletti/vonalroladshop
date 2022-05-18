@@ -20,35 +20,41 @@
     //begin add_cart()
     function add_cart(){
 
+        session_start();
         global $db;
         if(isset($_GET['add_cart'])){
 
-            $ip_add = getRealIpUser();
+            /* $ip_add = getRealIpUser(); */
+
+            $customer_email = $_SESSION['customer_email'];
+
+            $get_customer = "select * from customers where customer_email='$customer_email'";
+            $run_customers = mysqli_query($db,$get_customer);
+            $row_customer = mysqli_fetch_array($run_customers);
+            $customer_id = $row_customer['customer_id'];
 
             $p_id = $_GET['add_cart'];
 
             $product_qty = $_POST['product_qty'];
 
             $product_size = $_POST['product_size'];
+            
+            $product_color = $_POST['product_color'];
+            
+            $product_pic = $_POST['product_pic'];
 
-            $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
+            $product_draw = $_POST['product_draw'];
 
-            $run_check = mysqli_query($db,$check_product);
+            /* $check_product = "select * from cart where customer_id='$customer_id' AND p_id='$p_id'";
 
-            if(mysqli_num_rows($run_check)>0){
+            $run_check = mysqli_query($db,$check_product); */
 
-                echo "<script>alert('Ez a termék már a kosaradban van.')</script>";
-                echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
-                
-            }else{
+            $query = "insert into cart (p_id,ip_add,qty,size,customer_id,color,pic_name,draw_name) values ('$p_id','$ip_add','$product_qty','$product_size', '$customer_id', '$product_color', '$product_pic', '$product_draw')";
 
-                $query = "insert into cart (p_id,ip_add,qty,size) values ('$p_id','$ip_add','$product_qty','$product_size')";
+            /* echo $query; */
+            $run_query = mysqli_query($db,$query);
 
-                $run_query = mysqli_query($db,$query);
-
-                echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
-
-            }
+            echo "<script>window.open('shop.php','_self')</script>";
 
         }
 
@@ -314,7 +320,7 @@
     //finish getPCatPro()
 
     //begin getCatPro()
-    function getCatPro(){
+    /* function getCatPro(){
 
         global $db;
 
@@ -434,17 +440,25 @@
 
         }
 
-    }
+    } */
     //finish getCatPro()
 
     // begin items()
     function items(){
 
+        session_start();
         global $db;
 
-        $ip_add = getRealIpUser();
+        /* $ip_add = getRealIpUser(); */
 
-        $get_items = "select * from cart where ip_add='$ip_add'";
+        $customer_email = $_SESSION['customer_email'];
+
+        $get_customer = "select * from customers where customer_email='$customer_email'";
+        $run_customers = mysqli_query($db,$get_customer);
+        $row_customer = mysqli_fetch_array($run_customers);
+        $customer_id = $row_customer['customer_id'];
+
+        $get_items = "select * from cart where customer_id='$customer_id'";
 
         $run_items = mysqli_query($db,$get_items);
 
@@ -458,10 +472,19 @@
     function total_price(){
 
         global $db;
+        session_start();
 
-        $ip_add = getRealIpUser();
+        /* $ip_add = getRealIpUser(); */
 
-        $select_cart = "select * from cart where ip_add='$ip_add'";
+        $customer_email = $_SESSION['customer_email'];
+
+        $get_customer = "select * from customers where customer_email='$customer_email'";
+        $run_customers = mysqli_query($db,$get_customer);
+        $row_customer = mysqli_fetch_array($run_customers);
+        $customer_id = $row_customer['customer_id'];
+
+
+        $select_cart = "select * from cart where customer_id='$customer_id'";
 
         $total = 0;
 

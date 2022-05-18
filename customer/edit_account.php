@@ -35,7 +35,7 @@
 
         <label> E-mail cím: </label>
 
-        <input type="text" name="c_email" class="form-control" value="<?php echo $customer_email; ?>" required>
+        <input type="text" name="c_email" class="form-control" value="<?php echo $customer_email; ?>" readonly>
 
     </div> <!-- form-group finish -->
 

@@ -141,11 +141,10 @@
                 <hr>-->
                 
                 <p class="social">
-                    <a href="../#" class="fa fa-facebook"></a>
-                    <a href="../#" class="fa fa-instagram"></a>
-                    <a href="../#" class="fa fa-google-plus"></a>
-                    <a href="../#" class="fa fa-envelope"></a>
-                    </p>
+                    <a href="https://www.facebook.com/vonalrolad" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/vonalrolad/" class="fa fa-instagram"></a>
+                    <a href="contact.php" class="fa fa-envelope"></a>
+                </p>
 
             </div>
         </div> <!-- row finish -->

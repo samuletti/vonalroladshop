@@ -30,13 +30,13 @@
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <!-- dropdown-toggle begin -->
 
-                <i class="fa fa-user"></i> VonalRólad <b class="caret"></b>
+                <i class="fa fa-user"></i> <?php echo $admin_name; ?> <b class="caret"></b>
 
             </a> <!-- dropdown-toggle finish -->
 
             <ul class="dropdown-menu"> <!-- dropdown-menu begin -->
                 <li> <!-- li begin -->
-                    <a href="index.php?user_profile"> <!-- a href begin -->
+                    <a href="index.php?user_profile=<?php echo $admin_id ?>"> <!-- a href begin -->
 
                         <i class="fa fa-fw fa-user"></i> Profil
 
@@ -48,7 +48,7 @@
 
                         <i class="fa fa-fw fa-envelope"></i> Termékek
 
-                        <span class="badge">7</span>
+                        <span class="badge"><?php echo $count_products; ?></span>
 
                     </a> <!-- a href finish -->
                 </li> <!-- li finish -->
@@ -58,17 +58,17 @@
 
                         <i class="fa fa-fw fa-users"></i> Vásárlók
 
-                        <span class="badge">11</span>
+                        <span class="badge"><?php echo $count_customers; ?></span>
 
                     </a> <!-- a href finish -->
                 </li> <!-- li finish -->
 
                 <li> <!-- li begin -->
-                    <a href="index.php?view_cats"> <!-- a href begin -->
+                    <a href="index.php?view_p_cats"> <!-- a href begin -->
 
                         <i class="fa fa-fw fa-gear"></i> Termék típusok
 
-                        <span class="badge">4</span>
+                        <span class="badge"><?php echo $count_p_categories; ?></span>
 
                     </a> <!-- a href finish -->
                 </li> <!-- li finish -->
@@ -152,7 +152,7 @@
 
                 <ul id="cat" class="collapse"> <!-- collapse begin -->
                     <li> <!-- li begin -->
-                        <a href="index.php?insert_category"> Kategória létrehozása </a>
+                        <a href="index.php?insert_cat"> Kategória létrehozása </a>
                     </li> <!-- li begin -->
                     <li> <!-- li finish -->
                         <a href="index.php?view_cats"> Kategóriák megtekintése </a>
@@ -199,28 +199,28 @@
                 </a> <!-- a href finish -->
             </li> <!-- li finish -->
 
-            <li> <!-- li begin -->
+            <!--<li> <'!-- li begin --'>
 
-                <a href="#" data-toggle="collapse" data-target="#users"> <!-- a href begin -->
+                <a href="#" data-toggle="collapse" data-target="#users"> <'!-- a href begin -'->
 
                     <i class="fa fa-fw fa-users"></i> Felhasználók
                     <i class="fa fa-fw fa-caret-down"></i>
 
-                </a> <!-- a href finish -->
+                </a> <'!-- a href finish -'->
 
-                <ul id="users" class="collapse"> <!-- collapse begin -->
-                    <li> <!-- li begin -->
+                <ul id="users" class="collapse"> <'!-- collapse begin --'>
+                    <li> <'!-- li begin -'->
                         <a href="index.php?insert_user"> Felhasználó hozzáadása </a>
-                    </li> <!-- li begin -->
-                    <li> <!-- li finish -->
+                    </li> <'!-- li begin -'->
+                    <li> <'!-- li finish -'->
                         <a href="index.php?view_users"> Felhasználók megtekintése </a>
-                    </li> <!-- li finish -->
-                    <li> <!-- li finish -->
-                        <a href="index.php?user_profile"> Felhasználó módosítása </a>
-                    </li> <!-- li finish -->
-                </ul> <!-- collapse finish -->
+                    </li> <'!-- li finish -'->
+                    <li> <'!-- li finish -'->
+                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Felhasználó módosítása </a>
+                    </li> <'!-- li finish -'->
+                </ul> <'!-- collapse finish -'->
 
-            </li> <!-- li finish -->
+            </li> <'!-- li finish --'> -->
 
             <li> <!-- li begin -->
                 <a href="logout.php"> <!-- a href begin -->

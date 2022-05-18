@@ -61,16 +61,22 @@
 
                 <div class="col-md-6 offer"> <!-- col-md-6 offer begin -->
 
-                    <a href="#" class="btn btn-success btn-sm">
+                    <a href="../my_account.php?my_orders" class="btn btn-success btn-sm">
                         <?php 
 
                             if(!isset($_SESSION['customer_email'])){
 
-                                echo "Welcome: Guest";
+                                echo "Üdv: Vendég ";
 
                             }else{
 
-                                echo "Welcome: " . $_SESSION['customer_email'] . " ";
+                                $customer_email = $_SESSION['customer_email'];
+                                $getcustomer = "select * from customers where customer_email='$customer_email'";
+                                $run_customer = mysqli_query($con,$getcustomer);
+                                $row_customer = mysqli_fetch_array($run_customer);
+                                $customer_name = $row_customer['customer_name'];
+
+                                echo "Üdv, " . $customer_name . " ";
 
                             }
                         
@@ -130,16 +136,6 @@
 
                     </a> <!-- navbar-brand home begin -->
 
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle Search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-
                 </div> <!-- navbar-header finish -->
 
                 <div class="navbar-collapse collapse" id="navigation"> <!-- navbar-collapse collapse begin -->
@@ -174,39 +170,39 @@
 
                     </a>  <!-- btn navbar-btn btn-primary right finish -->
 
-                    <div class="navbar-collapse collapse right"> <!-- navbar-collapse collapse right begin -->
+                    <!-- <div class="navbar-collapse collapse right"> <1!-- navbar-collapse collapse right begin --1>
 
-                        <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"> <!-- btn btn-primary navbar-btn begin -->
+                        <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"> <!1-- btn btn-primary navbar-btn begin -1->
 
                         <span class="sr-only">Toggle Search</span>
 
                         <i class="fa fa-search"></i>
 
-                        </button> <!-- btn btn-primary navbar-btn finish -->
+                        </button> <!1-- btn btn-primary navbar-btn finish -1->
 
-                    </div>  <!-- navbar-collapse collapse right finish -->
+                    </div>  <!1-- navbar-collapse collapse right finish -1-> -->
 
-                    <div class="collapse clearfix" id="search"> <!-- collapse clearfix begin -->
+                    <!-- <div class="collapse clearfix" id="search"> <!1-- collapse clearfix begin -1->
                     
-                        <form method="get" action="results.php" class="navbar-form"> <!-- navbar-form begin -->
+                        <form method="get" action="results.php" class="navbar-form"> <!1-- navbar-form begin -1->
 
-                            <div class="input-group"> <!-- input-group begin -->
+                            <div class="input-group"> <!1-- input-group begin -1->
 
                                 <input type="text" class="form-control" placeholder="Keresés" name="user_query" required>
 
-                                <span class="input-group-btn"> <!-- input-group-btn begin -->
-                                <button type="submit" name="search" value="Search" class="btn btn-primary"> <!-- btn btn-primary begin -->
+                                <span class="input-group-btn"> <!1-- input-group-btn begin -1->
+                                <button type="submit" name="search" value="Search" class="btn btn-primary"> <!1-- btn btn-primary begin -1->
                                     
                                     <i class="fa fa-search"></i>
 
-                                </button> <!-- btn btn-primary finish -->
-                                </span> <!-- input-group-btn finish -->
+                                </button> <!1-- btn btn-primary finish -1->
+                                </span> <!1-- input-group-btn finish -1->
 
-                            </div> <!-- input-group finish -->
+                            </div> <!1-- input-group finish -1->
 
-                        </form> <!-- navbar-form finish -->
+                        </form> <!1-- navbar-form finish -1->
 
-                    </div> <!-- collapse clearfix finish -->
+                    </div> <!-1- collapse clearfix finish -1-> -->
 
                 </div> <!-- navbar-collapse collapse finish -->
 
