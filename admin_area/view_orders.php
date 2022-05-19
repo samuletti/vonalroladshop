@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li class="active"> <!-- li begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Orders
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Rendelések megtekintése
 
             </li> <!-- li finish -->
         </ol> <!-- breadcrumb finish -->
@@ -22,11 +22,11 @@
 
 <div class="row"> <!-- row 2 begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-deafult begin -->
+        <div class="panel panel-brown"> <!-- panel panel-deafult begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-tags"></i> View Orders
+                    <i class="fa fa-tags"></i> Rendelések megtekintése
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
@@ -38,19 +38,20 @@
                         <thead> <!-- thead begin -->
                             <tr> <!-- tr begin -->
                                 <th> ID: </th>
-                                <th> Customer: </th>
-                                <th> Product Title: </th>
-                                <th> Due Amount: </th>
-                                <th> Invoice No: </th>
-                                <th> Qty: </th>
-                                <th> Size: </th>
-                                <th> Color: </th>
-                                <th> Pic Name: </th>
-                                <th> Draw Name: </th>
-                                <th> Total Amount: </th>
-                                <th> Order Date: </th>
-                                <th> Order Status: </th>
-                                <th> Delete: </th>
+                                <th> Vásárló: </th>
+                                <th> Termék neve: </th>
+                                <th> Egység ár: </th>
+                                <th> Számla: </th>
+                                <th> DB: </th>
+                                <th> Méret: </th>
+                                <th> Szín: </th>
+                                <th> Fénykép neve: </th>
+                                <th> Rajz neve: </th>
+                                <th> Összesen: </th>
+                                <th> Rendelés dátuma: </th>
+                                <th> Rendelés állapota: </th>
+                                <th> Állapot frissítése: </th>
+                                <th> Törlés: </th>
                                 
                             </tr> <!-- tr begin -->
                         </thead> <!-- thead finish -->
@@ -101,10 +102,16 @@
                                 <td> <?php echo $order_date; ?> </td>
 
                                 <td> <?php echo $order_status; ?> </td>
+
+                                <td> <a href="index.php?edit_status=<?php echo $order_id; ?>">
+
+                                    <i class="fa fa-pencil"></i> Állapot frissítése
+                            
+                                </a> </td>
                                 
                                 <td> <a href="index.php?delete_order=<?php echo $order_id; ?>">
 
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Törlés
                             
                                 </a> </td>
                             </tr> <!-- tr finish -->

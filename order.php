@@ -54,10 +54,6 @@
 
             $run_customer_order = mysqli_query($con,$insert_customer_order);
 
-            $insert_pending_order = "insert into pending_orders (customer_id,prod_title,invoice_no,product_id,qty,size,order_status, color, pic_name, draw_name) values ('$customer_id','$prod_name','$invoice_no','$pro_id','$pro_qty','$pro_size','$status','$pro_color','$pic_name','$draw_name')";
-
-            $run_pending_order = mysqli_query($con,$insert_pending_order);
-
             $delete_cart = "delete from cart where customer_id='$customer_id'";
 
             $run_delete = mysqli_query($con,$delete_cart);

@@ -13,12 +13,12 @@
 
 <div class="row"> <!-- row1 begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <h1 class="page-header"> Dashboard </h1>
+        <h1 class="page-header"> Kezelőfelület </h1>
 
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li class="active"> <!-- li begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard
+                <i class="fa fa-dashboard"></i> Kezelőfelület
             
             </li> <!-- li finish -->
         </ol> <!-- breadcrumb finish -->
@@ -27,7 +27,7 @@
 
 <div class="row"> <!-- row2 begin -->
     <div class="col-lg-3 col-md-6"> <!-- col-lg-3 col-md-6 begin -->
-        <div class="panel panel-primary"> <!-- panel panel-primary begin -->
+        <div class="panel panel-blue"> <!-- panel panel-primary begin -->
 
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <div class="row"> <!-- row begin -->
@@ -41,7 +41,7 @@
                         <div class="huge"> <!-- huge begin -->
                             <?php echo $count_products; ?>
                         </div> <!-- huge finish -->
-                        <div> Products </div>
+                        <div> Termékek </div>
                     </div> <!-- col-xs-9 text-right finish -->
 
                 </div> <!-- row finish -->
@@ -51,7 +51,7 @@
                 <div class="panel-footer"> <!-- panel-footer begin -->
 
                     <span class="pull-left"> <!-- pull-left begin -->
-                         View Details 
+                         Részletek
                     </span> <!-- pull-left finish -->
 
                     <span class="pull-right"> <!-- pull-right begin -->
@@ -81,7 +81,7 @@
                         <div class="huge"> <!-- huge begin -->
                             <?php echo $count_customers; ?>
                         </div> <!-- huge finish -->
-                        <div> Customers </div>
+                        <div> Vásárlók </div>
                     </div> <!-- col-xs-9 text-right finish -->
 
                 </div> <!-- row finish -->
@@ -91,7 +91,7 @@
                 <div class="panel-footer"> <!-- panel-footer begin -->
 
                     <span class="pull-left"> <!-- pull-left begin -->
-                         View Details 
+                         Részletek 
                     </span> <!-- pull-left finish -->
 
                     <span class="pull-right"> <!-- pull-right begin -->
@@ -121,7 +121,7 @@
                         <div class="huge"> <!-- huge begin -->
                             <?php echo $count_p_categories; ?>
                         </div> <!-- huge finish -->
-                        <div> Product Categories </div>
+                        <div> Termék Típusok </div>
                     </div> <!-- col-xs-9 text-right finish -->
 
                 </div> <!-- row finish -->
@@ -131,7 +131,7 @@
                 <div class="panel-footer"> <!-- panel-footer begin -->
 
                     <span class="pull-left"> <!-- pull-left begin -->
-                         View Details 
+                         Részletek
                     </span> <!-- pull-left finish -->
 
                     <span class="pull-right"> <!-- pull-right begin -->
@@ -161,7 +161,7 @@
                         <div class="huge"> <!-- huge begin -->
                             <?php echo $count_pending_orders; ?>
                         </div> <!-- huge finish -->
-                        <div> Orders </div>
+                        <div> Rendelések </div>
                     </div> <!-- col-xs-9 text-right finish -->
 
                 </div> <!-- row finish -->
@@ -171,7 +171,7 @@
                 <div class="panel-footer"> <!-- panel-footer begin -->
 
                     <span class="pull-left"> <!-- pull-left begin -->
-                         View Details 
+                         Részletek
                     </span> <!-- pull-left finish -->
 
                     <span class="pull-right"> <!-- pull-right begin -->
@@ -190,11 +190,11 @@
 
 <div class="row"> <!-- row3 begin -->
     <div class="col-lg-8"> <!-- col-lg-8 begin -->
-        <div class="panel panel-primary"> <!-- panel panel-primary begin -->
+        <div class="panel panel-brown"> <!-- panel panel-primary begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> New Orders
+                    <i class="fa fa-money fa-fw"></i> Új Rendelések
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
@@ -206,16 +206,16 @@
                         <thead> <!-- thead begin -->
 
                         <tr>
-                            <th> Order no: </th>
-                            <th> Customer Email: </th>
-                            <th> Invoice no: </th>
-                            <th> Product Title: </th>
-                            <th> Product Qty: </th>
-                            <th> Product Size: </th>
-                            <th> Product Color: </th>
-                            <th> Picture Name: </th>
-                            <th> Drawing Name: </th>
-                            <th> Status: </th>
+                            <th> Rendelés ID: </th>
+                            <th> Vásárló: </th>
+                            <th> Számla: </th>
+                            <th> Termék: </th>
+                            <th> Mennyiség: </th>
+                            <th> Méret: </th>
+                            <th> Szín: </th>
+                            <th> Fénykép: </th>
+                            <th> Rajz: </th>
+                            <th> Állapot: </th>
                         </tr>
 
                         </thead> <!-- thead finish -->
@@ -224,13 +224,15 @@
 
                         <?php 
 
-                            $i = 0;
+                            $stat = "Pending";
 
-                            $get_orders = "select * from pending_orders";
+                            $get_orders = "select * from customer_orders where order_status='$stat'";
 
                             $run_order = mysqli_query($con,$get_orders);
 
-                            while($row_order=mysqli_fetch_array($run_order)){
+                            $i = 0;
+
+                            while($row_order = mysqli_fetch_array($run_order)){
 
                                 $order_id = $row_order['order_id'];
                                 
@@ -253,28 +255,29 @@
                                 $order_status = $row_order['order_status'];
 
                                 $get_customers = "select * from customers where customer_id='$c_id'";
-                                $run_order = mysqli_query($con,$get_customers);
-                                $row_customer = mysqli_fetch_array($run_order);
+                                $run_customer = mysqli_query($con,$get_customers);
+                                $row_customer = mysqli_fetch_array($run_customer);
                                 $customer_email = $row_customer['customer_email'];
 
                                 $i++;
-                        
-                        ?>
+                                ?>
+                                
+                                <tr> <!-- tr begin -->
 
-                            <tr> <!-- tr begin -->
-                                <td> <?php echo $order_id; ?> </td>
-                                <td> <?php echo $customer_email; ?> </td>
-                                <td> <?php echo $invoice_no; ?> </td>
-                                <td> <?php echo $prod_title; ?> </td>
-                                <td> <?php echo $qty; ?> </td>
-                                <td> <?php echo $size; ?> </td>
-                                <td> <?php echo $color; ?> </td>
-                                <td> <?php echo $pic_name; ?> </td>
-                                <td> <?php echo $draw_name; ?> </td>
-                                <td> <?php echo $order_status; ?> </td>
-                            </tr> <!-- tr finish -->
+                                    <th> <?php echo"$order_id"; ?> </th>
+                                    <td> <?php echo"$customer_email"; ?> </td>
+                                    <td> <?php echo"$invoice_no"; ?> </td>
+                                    <td> <?php echo"$prod_title"; ?> </td>
+                                    <td> <?php echo"$qty"; ?> </td>
+                                    <td> <?php echo"$size"; ?> </td>
+                                    <td> <?php echo"$color"; ?> </td>
+                                    <td> <?php echo"$pic_name"; ?> </td>
+                                    <td> <?php echo"$draw_name"; ?> </td>
+                                    <td> <?php echo"$order_status"; ?> </td>
 
-                            <?php } ?>
+                                </tr> <!-- tr finish -->
+
+                                <?php } ?>
 
                         </tbody> <!-- tbody finish -->
 
@@ -285,7 +288,7 @@
 
                     <a href="index.php?view_orders"> <!-- a href begin -->
 
-                        View All Orders <i class="fa fa-arrow-circle-right"></i>
+                        Összes rendelés megtekintése <i class="fa fa-arrow-circle-right"></i>
                         
                     </a> <!-- a href finish -->
 
@@ -316,13 +319,13 @@
                 <div class="mb-md"> <!-- mb-md begin -->
                     <div class="widget-content-expanded"> <!-- widget-content-expanded begin -->
                         <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
-                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country; ?> <br/>
-                        <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact; ?> <br/>
+                        <i class="fa fa-flag"></i> <span> Ország: </span> <?php echo $admin_country; ?> <br/>
+                        <i class="fa fa-envelope"></i> <span> Kapcsolat: </span> <?php echo $admin_contact; ?> <br/>
                     </div> <!-- widget-content-expanded finish -->
 
                     <hr class="dotted short">
 
-                    <h5 class="text-muted"> About Me </h5>
+                    <h5 class="text-muted"> Rólam </h5>
 
                     <p> <!-- p begin -->
 

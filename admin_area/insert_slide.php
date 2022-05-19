@@ -23,7 +23,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Slide
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Dia hozzáadása
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -32,10 +32,10 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-gear fa-fw"></i> Insert Slide
+                    <i class="fa fa-gear fa-fw"></i> Dia hozzáadása
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -44,7 +44,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Slide Name
+                            Dia neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -56,7 +56,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                                Slide Image
+                                Dia
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -102,20 +102,13 @@
 
             $run_slide = mysqli_query($con,$insert_slide);
 
-            echo "<script>alert('Slide succesfully inserted')</script>";
+            echo "<script>alert('Dia sikeresen hozzáadva')</script>";
             echo "<script>window.open('index.php?view_slides','_self')</script>";
 
         }else{
 
-            echo "<script>alert('You have already inserted 4 slides')</script>";
+            echo "<script>alert('Nincs lehetőség új dia beszúrására. A diavetítés már tartalmaz 4 diát')</script>";
             
-        }
-
-        if($run_cat){
-
-            echo "<script>alert(New Category has been interested)</script>";
-            echo "<script>window.open('index.php?view_slides'),'_self'</script>";
-
         }
 
     }

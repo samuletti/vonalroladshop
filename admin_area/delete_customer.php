@@ -20,7 +20,7 @@
 
         if($run_delete){
 
-            echo "<script>alert('You deleted this customer.')</script>";
+            echo "<script>alert('Sikeres vásárló törlés')</script>";
             echo "<script>window.open('index.php?view_customers','_self')</script>";
 
         }

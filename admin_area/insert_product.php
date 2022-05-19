@@ -10,19 +10,7 @@
 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Új Termék </title>
-    <link rel="stylesheet" href="css/bootstrap-337.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-</head>
 <body>
-    
     <div class="row"> <!-- row begin -->
 
         <div class="col-lg-12"> <!-- col-lg-12 begin -->
@@ -31,7 +19,7 @@
 
                 <li class="active"> <!-- li active begin -->
 
-                    <i class="fa fa-dashboard"></i> Kezelőfelület <!-- vagy "Insert Products" -->
+                    <i class="fa fa-dashboard"></i> Kezelőfelület / Termék hozzáadása<!-- vagy "Insert Products" -->
 
                 </li> <!-- li active finish -->
 
@@ -45,13 +33,13 @@
 
         <div class="col-lg-12"> <!-- col-lg-12 begin -->
 
-            <div class="panel panel-default"> <!-- panel panel-default begin -->
+            <div class="panel panel-brown"> <!-- panel panel-default begin -->
 
                 <div class="panel-heading"> <!-- panel-heading begin -->
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Termék beszúrása
+                        <i class="fa fa-money fa-fw"></i> Termék hozzáadása
 
                     </h3> <!-- panel-title begin -->
 
@@ -188,17 +176,6 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Kulcsszavak </label>
-                        <div class="col-md-6"> <!-- col-md-6 begin -->
-
-                            <input name="product_keywords" type="text" class="form-control" required>
-
-                        </div> <!-- col-md-6 finish -->
-
-                    </div> <!-- form-group finish -->
-
-                    <div class="form-group"> <!-- form-group begin -->
-
                         <label class="col-md-3 control-label"> Termék leírása </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
@@ -242,7 +219,6 @@
         $product_cat = $_POST['product_cat'];
         $cat = $_POST['cat'];
         $product_price = $_POST['product_price'];
-        $product_keywords = $_POST['product_keywords'];
         $product_desc = $_POST['product_desc'];
 
         $product_img1 = $_FILES['product_img1']['name'];
@@ -263,13 +239,13 @@
         move_uploaded_file($temp_name2,$img_path . $product_img2);
         move_uploaded_file($temp_name3,$img_path . $product_img3);
 
-        $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
+        $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc) values('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc')";
 
         $run_product = mysqli_query($con, $insert_product);
 
         if($run_product){
 
-            echo "<script>alert('Product has been inserted successfully')</script>";
+            echo "<script>alert('Új termék hozzáadva')</script>";
             echo "<script>window.open('index.php?view_products','_self')</script>";
 
         }

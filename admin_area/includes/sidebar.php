@@ -35,14 +35,7 @@
             </a> <!-- dropdown-toggle finish -->
 
             <ul class="dropdown-menu"> <!-- dropdown-menu begin -->
-                <li> <!-- li begin -->
-                    <a href="index.php?user_profile=<?php echo $admin_id ?>"> <!-- a href begin -->
-
-                        <i class="fa fa-fw fa-user"></i> Profil
-
-                    </a> <!-- a href finish -->
-                </li> <!-- li finish -->
-
+                
                 <li> <!-- li begin -->
                     <a href="index.php?view-products"> <!-- a href begin -->
 
@@ -194,33 +187,29 @@
             </li> <!-- li finish -->
 
             <li> <!-- li begin -->
-                <a href="index.php?view_payments"> <!-- a href begin -->
-                    <i class="fa fa-fw fa-money"></i> Fizetések megtekintése
-                </a> <!-- a href finish -->
-            </li> <!-- li finish -->
 
-            <!--<li> <'!-- li begin --'>
+                <a href="#" data-toggle="collapse" data-target="#draws"> <!-- a href begin -->
 
-                <a href="#" data-toggle="collapse" data-target="#users"> <'!-- a href begin -'->
-
-                    <i class="fa fa-fw fa-users"></i> Felhasználók
+                    <i class="fa fa-fw fa-pencil"></i> Rajzok
                     <i class="fa fa-fw fa-caret-down"></i>
 
-                </a> <'!-- a href finish -'->
+                </a> <!-- a href finish -->
 
-                <ul id="users" class="collapse"> <'!-- collapse begin --'>
-                    <li> <'!-- li begin -'->
-                        <a href="index.php?insert_user"> Felhasználó hozzáadása </a>
-                    </li> <'!-- li begin -'->
-                    <li> <'!-- li finish -'->
-                        <a href="index.php?view_users"> Felhasználók megtekintése </a>
-                    </li> <'!-- li finish -'->
-                    <li> <'!-- li finish -'->
-                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Felhasználó módosítása </a>
-                    </li> <'!-- li finish -'->
-                </ul> <'!-- collapse finish -'->
+                <ul id="draws" class="collapse"> <!-- collapse begin -->
+                    <li> <!-- li begin -->
+                        <a href="index.php?upload_draw"> Rajz feltöltése </a>
+                    </li> <!-- li begin -->
+                    <li> <!-- li finish -->
+                        <a href="index.php?view_draws"> Rajzok megtekintése </a>
+                    </li> <!-- li finish -->
+                </ul> <!-- collapse finish -->
 
-            </li> <'!-- li finish --'> -->
+            </li> <!-- li finish -->
+            <li> <!-- li begin -->
+                <a href="index.php?view_pics"> <!-- a href begin -->
+                    <i class="fa fa-fw fa-camera"></i> Vásárlói Fényképek
+                </a> <!-- a href finish -->
+            </li> <!-- li finish -->
 
             <li> <!-- li begin -->
                 <a href="logout.php"> <!-- a href begin -->

@@ -180,19 +180,19 @@
                 $_SESSION['customer_email']=$c_email;
 
                 echo "<script>window.open('cart.php'.'_self')</script>";
-                echo "<script>alert('Successful Registration!')</script>";
+                echo "<script>alert('Sikeres regisztráció!')</script>";
                 
             }else{
                 //register with empty cart
 
                 $_SESSION['customer_email']=$c_email;
 
-                echo "<script>alert('Successful Registration!')</script>";
+                echo "<script>alert('Sikeres regisztráció!')</script>";
                 echo "<script>window.open('index.php','_self')</script>";
                 
             }
         }else{
-            echo "<script>alert('This email is already in use!')</script>";
+            echo "<script>alert('Ez az e-mail cím már használatban van!')</script>";
             echo "<script>window.open('customer_register.php','_self')</script>";
         }
 

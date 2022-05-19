@@ -29,7 +29,7 @@
 
             <button type="submit" class="btn btn-lg btn-primary btn-block" name="admin_login"> <!-- btn btn-lg btn-primary btn-block begin -->
 
-                Login
+                Bejelentkezés
 
             </button> <!-- btn btn-lg btn-primary btn-block finish -->
 </form> <!-- form-login finish -->
@@ -54,11 +54,11 @@
         if($count==1){
             $_SESSION['admin_email']=$admin_email;
             
-            echo "<script>alert('Logged in. Welcome back')</script>";
+            echo "<script>alert('Sikeres bejelentkezés')</script>";
             echo "<script>window.open('index.php?dashboard','_self')</script>";
         }else{
 
-            echo "<script>alert('Email or password wrong')</script>";
+            echo "<script>alert('Email vagy jelszó hibás')</script>";
             
         }
         

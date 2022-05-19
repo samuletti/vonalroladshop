@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Product Categories
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Termék típusok megtekintése
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -22,10 +22,10 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> View Product Categories
+                    <i class="fa fa-money fa-fw"></i> Termék típusok megtekintése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -35,11 +35,11 @@
                     <table class="table table-hover table-striped table-bordered"> <!-- table table-hover table-striped table-bordered begin -->
                         <thead> <!-- thead begin -->
                             <tr> <!-- tr begin -->
-                                <th> Product Category ID </th>
-                                <th> Product Category Title </th>
-                                <th> Product Category Desc </th>
-                                <th> Edit Product Category </th>
-                                <th> Delete Product Category </th>
+                                <th> Termék típus ID </th>
+                                <th> Termék típus neve </th>
+                                <th> Termék típus leírás </th>
+                                <th> Termék típus szerkesztése </th>
+                                <th> Termék típus törlése </th>
                             </tr> <!-- tr finish -->
                         </thead> <!-- thead finish -->
 
@@ -66,10 +66,10 @@
                                 <td> <?php echo $p_cat_title; ?> </td>
                                 <td width="300"> <?php echo $p_cat_desc; ?> </td>
                                 <td> <a href="index.php?edit_p_cat=<?php echo $p_cat_id; ?>">
-                                    <i class="fa fa-pencil"></i> Edit
+                                    <i class="fa fa-pencil"></i> Szerkesztés
                                 </a>  </td>
                                 <td> <a href="index.php?delete_p_cat=<?php echo $p_cat_id; ?>">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Törlés
                                 </a>  </td>
                             </tr> <!-- tr finish -->
 

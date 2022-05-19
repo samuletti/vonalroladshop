@@ -21,7 +21,7 @@
             $run_delete = mysqli_query($con,$delete_cat);
 
             if($run_delete){
-                echo "<script>alert('One of your categories has been deleted')</script>";
+                echo "<script>alert('Sikeres kategória törlés')</script>";
                 echo "<script>window.open('index.php?view_cats','_self')</script>";
             }
 

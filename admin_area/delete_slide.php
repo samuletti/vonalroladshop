@@ -21,7 +21,7 @@
             $run_delete = mysqli_query($con,$delete_slide);
 
             if($run_delete){
-                echo "<script>alert('One of your slide has been deleted')</script>";
+                echo "<script>alert('Sikeres dia törlés')</script>";
                 echo "<script>window.open('index.php?view_slides','_self')</script>";
             }
 

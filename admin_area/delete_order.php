@@ -20,7 +20,7 @@
 
         if($run_delete){
 
-            echo "<script>alert('You deleted this order.')</script>";
+            echo "<script>alert('Sikeres rendelés törlés')</script>";
             echo "<script>window.open('index.php?view_orders','_self')</script>";
 
         }

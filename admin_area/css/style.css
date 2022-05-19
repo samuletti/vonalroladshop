@@ -5,8 +5,9 @@ Author          : R4JGSN - Samu Letícia Vivien
 
 /* General Styles */
 
-body{
-    margin-top: 100px;
+body {
+    padding: 0;
+    margin: 0;
 }
 
 #wrapper{
@@ -21,7 +22,7 @@ body{
 
 @media (min-width: 768px){
     body{
-        margin-top: 50px;
+        margin-top: -90px;
     }
     
     #wrapper{
@@ -46,7 +47,7 @@ body{
 }
 
 .top-nav>li>a{
-    color: #999999;
+    color: #ffffff;
     line-height: 20px;
     padding-top: 15px;
     padding-bottom: 15px;;
@@ -88,7 +89,7 @@ body{
 .side-nav>li>ul>li>a{
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999999;
+    color: #ffffff;
     display: block;
 }
 
@@ -104,54 +105,71 @@ body{
 }
 
 .panel-green{
-    border-color: #5cd85d;
+    border-color: #7e5a5a;
 }
 
 .panel-green>.panel-heading{
     color: #ffffff;
-    background-color: #5cd85d;
+    background-color: #7e5a5a;
 }
 
 .panel-green>a{
-    color: #5cd85d;
+    color: #7e5a5a;
 }
 
 .panel-green>a:hover{
-    color: #3d8c3d;
+    color: #625252;
+}
+
+.panel-blue{
+    border-color: #7e5a5a;
+}
+
+.panel-blue>.panel-heading{
+    color: #ffffff;
+    background-color: #7e5a5a;
+}
+
+.panel-blue>a{
+    color: #7e5a5a;
+}
+
+.panel-blue>a:hover{
+    color: #625252;
 }
 
 .panel-yellow{
-    border-color: #f0ad4c;
+    border-color: #7e5a5a;
 }
 
 .panel-yellow>.panel-heading{
     color: #ffffff;
-    background-color: #f0ad4c;
+    background-color: #7e5a5a;
 }
 
 .panel-yellow>a{
-    color: #f0ad4c;
+    color: #7e5a5a;
 }
 
 .panel-yellow>a:hover{
-    color: #ba8539;
+    color: #625252;
 }
 
 .panel-red{
-    border-color: #d9534f;
+    border-color: #7e5a5a;
 }
 
 .panel-red>.panel-heading{
     color: #ffffff;
-    background-color: #d9534f;
+    background-color: #7e5a5a;
 }
 
 .panel-red>a{
-    color: #d9534f;
+    color: #7e5a5a;
 }
 
 .panel-red>a:hover{
-    color: #8d4341;
+    color: #625252;
 }
 
 /* Admin Profile Styling */
@@ -199,7 +217,7 @@ hr.dotted{
 }
 
 .thumb-info .thumb-info-type{
-    background: #0088cc;
+    background: #625252;
     display: block;
     border-radius: 2px;
     float: left;
@@ -220,6 +238,20 @@ hr.dotted{
 }
 
 .widget-content-expanded i{
-    color: #0088cc;
+    color: #625252;
     margin-right: 5px;
+}
+
+/* New orders */
+
+.panel-brown> .panel-heading{
+    background-color: #bb9f9f;
+}
+
+a{
+    color: #7e5a5a;
+}
+
+.panel {
+    background-color: #ffffff;
 }

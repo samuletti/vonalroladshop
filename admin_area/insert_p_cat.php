@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Product Category
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Termék típus létrehozása
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -22,10 +22,10 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> Insert Product Category
+                    <i class="fa fa-money fa-fw"></i> Termék típus létrehozása
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -34,7 +34,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Product Category Title
+                            Termék típus neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -46,7 +46,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Product Category Description
+                            Termék típus leírása
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -85,7 +85,7 @@
 
         if($run_p_cat){
 
-            echo "<script>alert(New Product Category has been interested)</script>";
+            echo "<script>alert(Új termék típus létrehozva)</script>";
             echo "<script>window.open('index.php?view_p_cats'),'_self'</script>";
 
         }

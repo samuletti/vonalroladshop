@@ -33,7 +33,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Slide
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Dia szerkesztése
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -45,7 +45,7 @@
         <div class="panel panel-default"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-gear fa-fw"></i> Edit Slide
+                    <i class="fa fa-gear fa-fw"></i> Dia szerkesztése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -54,7 +54,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Slide Name
+                            Dia neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -66,7 +66,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                                Slide Image
+                                Dia
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -111,7 +111,7 @@
         $run_update_slide = mysqli_query($con,$update_slide);
 
         if($run_update_slide){
-            echo "<script>alert('Slide sucessfully updated')</script>";
+            echo "<script>alert('Sikeres dia szerkesztés')</script>";
             echo "<script>window.open('index.php?view_slides','_self')</script>";
         }
     }

@@ -23,7 +23,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Category
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Kategória létrehozása
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -32,10 +32,10 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> Insert Category
+                    <i class="fa fa-money fa-fw"></i> Kategória létrehozása
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -44,7 +44,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Category Title
+                            Kategória neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -56,7 +56,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Category Description
+                            Kategória leírása
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -95,7 +95,7 @@
 
         if($run_cat){
 
-            echo "<script>alert(New Category has been interested)</script>";
+            echo "<script>alert(Új kategória létrehozva)</script>";
             echo "<script>window.open('index.php?view_cats'),'_self'</script>";
 
         }

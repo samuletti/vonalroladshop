@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Slides
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Diák megtekintése
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -22,10 +22,10 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> View Slides
+                    <i class="fa fa-money fa-fw"></i> Diák megtekintése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -35,11 +35,11 @@
                     <table class="table table-hover table-striped table-bordered"> <!-- table table-hover table-striped table-bordered begin -->
                         <thead> <!-- thead begin -->
                             <tr> <!-- tr begin -->
-                                <th> Slide ID </th>
-                                <th> Slide Name </th>
-                                <th> Slide Image </th>
-                                <th> Edit Category </th>
-                                <th> Delete Category </th>
+                                <th> Dia ID </th>
+                                <th> Dia neve </th>
+                                <th> Dia </th>
+                                <th> Szerkesztés </th>
+                                <th> Törlés </th>
                             </tr> <!-- tr finish -->
                         </thead> <!-- thead finish -->
 
@@ -66,10 +66,10 @@
                                 <td> <?php echo $slide_name; ?> </td>
                                 <td width="300"> <img class="img-responsive" src="slides_images/<?php echo $slide_image; ?>"> </td>
                                 <td> <a href="index.php?edit_slide=<?php echo $slide_id; ?>">
-                                    <i class="fa fa-pencil"></i> Edit
+                                    <i class="fa fa-pencil"></i> Szerkesztés
                                 </a>  </td>
                                 <td> <a href="index.php?delete_slide=<?php echo $slide_id; ?>">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Törlés
                                 </a>  </td>
                             </tr> <!-- tr finish -->
 

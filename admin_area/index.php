@@ -50,7 +50,7 @@
         $count_p_categories = mysqli_num_rows($run_p_categories);
 
 
-        $get_pending_orders = "select * from pending_orders";
+        $get_pending_orders = "select * from customer_orders where order_status='Pending'";
 
         $run_pending_orders = mysqli_query($con,$get_pending_orders);
 
@@ -165,6 +165,22 @@
 
                 if(isset($_GET['delete_order'])){
                     include("delete_order.php");
+                }
+
+                if(isset($_GET['edit_status'])){
+                    include("edit_status.php");
+                }
+
+                if(isset($_GET['view_pics'])){
+                    include("view_pics.php");
+                }
+
+                if(isset($_GET['view_draws'])){
+                    include("view_draws.php");
+                }
+
+                if(isset($_GET['upload_draw'])){
+                    include("upload_draw.php");
                 }
 
             ?>

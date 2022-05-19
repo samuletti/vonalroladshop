@@ -170,7 +170,7 @@
                                     <label class='col-md-5 control-label'>Fotó</label>
 
                                     <div class='col-md-7'> <!-- col-md-7 begin -->
-                                        <select name='product_pic' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                        <select name='product_pic' class='form-control' required> <!-- form-control begin -->
                                             <option disabled selected>Válassz fényképet</option>
                                         ";
                                         $get_pics = "select * from customer_pics where customer_id='$customer_id'";
@@ -191,7 +191,7 @@
                                     <label class='col-md-5 control-label'>Rajz</label>
                                     <div class='col-md-7'> <!-- col-md-7 begin -->
 
-                                        <select name='product_draw' class='form-control' oninput='setCustomValidity('')' oninvalid='setCustomValidity('Must pick 1 size for the product')' required> <!-- form-control begin -->
+                                        <select name='product_draw' class='form-control' required> <!-- form-control begin -->
                                             <option disabled selected>Válassz rajzot</option>
                                         ";
                                         $get_draws = "select * from drawings where customer_id='$customer_id'";

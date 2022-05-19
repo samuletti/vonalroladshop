@@ -34,7 +34,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Product Category
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Termék típus szerkesztése
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -46,7 +46,7 @@
         <div class="panel panel-default"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-pencil fa-fw"></i> Edit Product Category
+                    <i class="fa fa-pencil fa-fw"></i> Termék típus szerkesztése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -55,7 +55,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Product Category Title
+                            Termék típus neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -67,7 +67,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Product Category Description
+                            Termék típus leírása
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -106,7 +106,7 @@
 
         if($run_p_cat){
 
-            echo "<script>alert(Product Category has been updated)</script>";
+            echo "<script>alert(Sikeres termék típus szerkesztés)</script>";
             echo "<script>window.open('index.php?view_p_cats'),'_self'</script>";
 
         }

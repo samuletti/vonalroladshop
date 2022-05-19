@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li class="active"> <!-- li begin -->
 
-                <i class="fa fa-dashboard"></i> Dashboard / View Customers
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Vásárlók megtekintése
 
             </li> <!-- li finish -->
         </ol> <!-- breadcrumb finish -->
@@ -22,11 +22,11 @@
 
 <div class="row"> <!-- row 2 begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-deafult begin -->
+        <div class="panel panel-brown"> <!-- panel panel-deafult begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-tags"></i> View Customers
+                    <i class="fa fa-tags"></i> Vásárlók megtekintése
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
@@ -38,14 +38,14 @@
                         <thead> <!-- thead begin -->
                             <tr> <!-- tr begin -->
                                 <th> ID: </th>
-                                <th> Name: </th>
-                                <th> Image: </th>
+                                <th> Név: </th>
+                                <th> Profilkép: </th>
                                 <th> E-mail: </th>
-                                <th> Country: </th>
-                                <th> City: </th>
-                                <th> Address: </th>
-                                <th> Contact: </th>
-                                <th> Delete: </th>
+                                <th> Ország: </th>
+                                <th> Város: </th>
+                                <th> Cím: </th>
+                                <th> Kapcsolat: </th>
+                                <th> Törlés: </th>
                                 
                             </tr> <!-- tr begin -->
                         </thead> <!-- thead finish -->
@@ -73,7 +73,7 @@
                             <tr> <!-- tr begin -->
                                 <td> <?php echo $acc_id; ?> </td>
                                 <td> <?php echo $acc_name; ?> </td>
-                                <td> <img src="../customer/customer_images/<?php echo $acc_img; ?>" class="img-responsive"> </td>
+                                <td> <img src="../customer/customer_images/<?php echo $acc_img; ?>" width="100" class="img-responsive"> </td>
                                 <td> <?php echo $acc_mail; ?> </td>
                                 <td> <?php echo $acc_country; ?> </td>
                                 <td> <?php echo $acc_city; ?> </td>
@@ -81,7 +81,7 @@
                                 <td> <?php echo $acc_contact; ?> </td>
                                 <td> <a href="index.php?delete_customer=<?php echo $acc_id; ?>">
 
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> Törlés
                             
                                 </a> </td>
                             </tr> <!-- tr finish -->

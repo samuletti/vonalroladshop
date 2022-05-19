@@ -13,7 +13,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li class="active"> <!-- li begin -->
 
-                <i class="fa fa-dashboard"></i> Kezelőfelület / Termékek megtekintése
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Rajzok megtekintése
 
             </li> <!-- li finish -->
         </ol> <!-- breadcrumb finish -->
@@ -26,7 +26,7 @@
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-tags"></i> Termékek megtekintése
+                    <i class="fa fa-tags"></i> Rajzok megtekintése
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
@@ -37,13 +37,11 @@
 
                         <thead> <!-- thead begin -->
                             <tr> <!-- tr begin -->
-                                <th> Termék ID: </th>
-                                <th> Termék neve: </th>
-                                <th> Termék fotó: </th>
-                                <th> Termék ára: </th>
-                                <th> Létrehozás: </th>
-                                <th> Szerkesztés: </th>
-                                <th> Törlés: </th>
+                                <th> Rajz ID: </th>
+                                <th> Vásárló: </th>
+                                <th> Fénykép ID: </th>
+                                <th> Rajz neve: </th>
+                                <th> Rajz: </th>
                                 
                             </tr> <!-- tr begin -->
                         </thead> <!-- thead finish -->
@@ -52,35 +50,29 @@
 
                             <?php 
 
-                                $get_pro = "select * from products";
-                                $run_pro = mysqli_query($con,$get_pro);
-                                while($row_pro=mysqli_fetch_array($run_pro)){
+                                $get_d = "select * from drawings";
+                                $run_d = mysqli_query($con,$get_d);
+                                while($row_d=mysqli_fetch_array($run_d)){
 
-                                    $pro_id = $row_pro['product_id'];
-                                    $pro_title = $row_pro['product_title'];
-                                    $pro_img1 = $row_pro['product_img1'];
-                                    $pro_price = $row_pro['product_price'];
-                                    $pro_date = $row_pro['date'];
+                                    $draw_id = $row_d['draw_id'];
+                                    $customer_id = $row_d['customer_id'];
+                                    $pic_id = $row_d['pic_id'];
+                                    $draw_name = $row_d['draw_name'];
+                                    
+                                    $get_customers = "select * from customers where customer_id='$customer_id'";
+                                    $run_customer = mysqli_query($con,$get_customers);
+                                    $row_customer = mysqli_fetch_array($run_customer);
+                                    $customer_email = $row_customer['customer_email'];
                                     $i++;
                             
                             ?>
 
                             <tr> <!-- tr begin -->
-                                <td> <?php echo $pro_id; ?> </td>
-                                <td> <?php echo $pro_title; ?> </td>
-                                <td> <img src="product_images/<?php echo $pro_img1; ?>" width="100" class="img-responsive"> </td>
-                                <td> <?php echo $pro_price; ?> Ft </td>
-                                <td> <?php echo $pro_date; ?> </td>
-                                <td> <a href="index.php?edit_product=<?php echo $pro_id; ?>">
-                                    
-                                    <i class="fa fa-pencil"></i> Szerkesztés
-                                    
-                                </a> </td>
-                                <td> <a href="index.php?delete_product=<?php echo $pro_id; ?>">
-
-                                    <i class="fa fa-trash"></i> Törlés
-                            
-                                </a> </td>
+                                <td> <?php echo $draw_id; ?> </td>
+                                <td> <?php echo $customer_email; ?> </td>
+                                <td> <?php echo $pic_id; ?> </td>
+                                <td> <?php echo $draw_name; ?> </td>
+                                <td> <img src="../customer/customers/<?php echo $customer_email; ?>/draws/<?php echo $draw_name; ?>" class="img-responsive" width="100"> </td>
                             </tr> <!-- tr finish -->
 
                             <?php } ?>

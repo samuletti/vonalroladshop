@@ -67,16 +67,28 @@
                     $prod = $row_orders['prod_title'];
                     $order_date = substr($row_orders['order_date'],0,11);
                     $order_status = $row_orders['order_status'];
+                    $status_out;
 
                     $i++;
 
                     if($order_status=='Pending'){
 
-                        $order_status = 'Fizetésre vár';
+                        $status_out = 'Fizetésre vár';
 
-                    }else{
+                    }
+                    if($order_status=='Paid / In Progress'){
 
-                        $order_status = 'Fizetve';
+                        $status_out = 'Fizetve / Feldolgozás alatt';
+
+                    }
+                    if($order_status=='In Transit'){
+
+                        $status_out = 'Szállítás alatt';
+
+                    }
+                    if($order_status=='Completed'){
+
+                        $status_out = 'Kézbesítve';
 
                     }
             
@@ -94,7 +106,7 @@
                 <td> <?php echo"$pic"; ?> </td>
                 <td> <?php echo"$draw"; ?> </td>
                 <td> <?php echo"$order_date"; ?> </td>
-                <td> <?php echo"$order_status"; ?> </td>
+                <td> <?php echo"$status_out"; ?> </td>
 
             </tr> <!-- tr finish -->
 

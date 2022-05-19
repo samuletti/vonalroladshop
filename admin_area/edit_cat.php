@@ -34,7 +34,7 @@
         <ol class="breadcrumb"> <!-- breadcrumb begin -->
             <li>
 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Category
+                <i class="fa fa-dashboard"></i> Kezelőfelület / Kategória szerkesztése
 
             </li>
         </ol> <!-- breadcrumb begin -->
@@ -46,7 +46,7 @@
         <div class="panel panel-default"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-pencil fa-fw"></i> Edit Category
+                    <i class="fa fa-pencil fa-fw"></i> Kategória szerkesztése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 
@@ -55,7 +55,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Category Title
+                            Kategória neve
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -67,7 +67,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Category Description
+                            Kategória leírása
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -106,7 +106,7 @@
 
         if($run_cat){
 
-            echo "<script>alert(Category has been updated)</script>";
+            echo "<script>alert(Sikeres kategória szerkesztés)</script>";
             echo "<script>window.open('index.php?view_cats'),'_self'</script>";
 
         }

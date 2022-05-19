@@ -63,7 +63,7 @@
 
                 <li class="active"> <!-- li active begin -->
 
-                    <i class="fa fa-dashboard"></i> Kezelőfelület <!-- vagy "Insert Products" -->
+                    <i class="fa fa-dashboard"></i> Kezelőfelület / Termék szerkesztése<!-- vagy "Insert Products" -->
 
                 </li> <!-- li active finish -->
 
@@ -83,7 +83,7 @@
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Termék Módosítása
+                        <i class="fa fa-money fa-fw"></i> Termék szerkesztése
 
                     </h3> <!-- panel-title begin -->
 
@@ -228,17 +228,6 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Kulcsszavak </label>
-                        <div class="col-md-6"> <!-- col-md-6 begin -->
-
-                            <input name="product_keywords" type="text" class="form-control" required value="<?php echo $p_keywords; ?>">
-
-                        </div> <!-- col-md-6 finish -->
-
-                    </div> <!-- form-group finish -->
-
-                    <div class="form-group"> <!-- form-group begin -->
-
                         <label class="col-md-3 control-label"> Termék leírása </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
@@ -313,7 +302,7 @@
 
         if($run_product){
 
-            echo "<script>alert('Product has been edited successfully')</script>";
+            echo "<script>alert('Sikeres termék szerkesztés')</script>";
             echo "<script>window.open('index.php?view_products','_self')</script>";
 
         }
