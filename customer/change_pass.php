@@ -1,4 +1,4 @@
-<h1 align="center"> Jelszó megváltoztatása </h1>
+<h1 align="center"> Jelszó módosítása </h1>
 
 <form action="" method="post"> <!-- form begin -->
 
@@ -6,7 +6,7 @@
 
         <label> Régi jelszó: </label>
 
-        <input type="text" name="old_pass" class="form-control" required>
+        <input type="password" name="old_pass" class="form-control" required>
 
     </div> <!-- form-group finish -->
 
@@ -14,7 +14,7 @@
 
         <label> Új jelszó: </label>
 
-        <input type="text" name="new_pass" class="form-control" required>
+        <input type="password" name="new_pass" class="form-control" required>
 
     </div> <!-- form-group finish -->
 
@@ -22,7 +22,7 @@
 
         <label> Új jelszó megerősítése: </label>
 
-        <input type="text" name="new_pass_again" class="form-control" required>
+        <input type="password" name="new_pass_again" class="form-control" required>
 
     </div> <!-- form-group finish -->
 
@@ -30,7 +30,7 @@
 
         <button type="submit" name="submit" class="btn btn-primary"> <!-- btn btn-primary begin -->
 
-            <i class="fa fa-user-md"></i> Frissítés
+            <i class="fa fa-lock"></i> Frissítés
 
         </button> <!-- btn btn-primary finish -->
 
@@ -54,9 +54,10 @@
 
         $run_c_old_pass = mysqli_query($con,$sel_old_pass);
 
-        $check_c_old_pass = mysqli_fetch_array($run_c_old_pass);
+        $row_c_old_pass = mysqli_fetch_array($run_c_old_pass);
+        $check_c_old_pass = $row_c_old_pass['customer_pass'];
 
-        if($check_c_old_pass == 0){
+        if($check_c_old_pass != $c_old_pass){
 
             echo "<script>alert('Hibás régi jelszó, próbáld újra!')</script>";
 

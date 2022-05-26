@@ -20,17 +20,7 @@
 
                 </div> <!-- col-md-12 finish -->
 
-                <div class="col-md-3"> <!-- col-md-3 begin -->
-
-                    <?php 
-            
-                        include("includes/sidebar.php");
-            
-                    ?>
-
-                </div> <!-- col-md-3 finish -->
-
-                <div class="col-md-9"> <!-- col-md-9 begin -->
+                <div class="col-md-12"> <!-- col-md-9 begin -->
 
                     <div class="box"> <!-- box begin -->
 
@@ -60,28 +50,28 @@
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Név:</label>
+                                    <label>Név:*</label>
                                     <input type="text" class="form-control" name="name" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>E-mail cím:</label>
+                                    <label>E-mail cím:*</label>
                                     <input type="email" class="form-control" name="email" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Tárgy:</label>
+                                    <label>Tárgy:*</label>
                                     <input type="text" class="form-control" name="subject" required>
 
                                 </div> <!-- form-group finish -->
                                 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Üzenet:</label>
+                                    <label>Üzenet:*</label>
                                     <textarea name="message" class="form-control" required></textarea>
 
                                 </div> <!-- form-group finish -->
@@ -90,9 +80,10 @@
 
                                     <button type="submit" name="submit" class="btn btn-primary">
 
-                                    <i class="fa fa-user-md"></i> Üzenet küldése </button>
+                                    <i class="fa fa-envelope"></i> Üzenet küldése </button>
 
                                 </div> <!-- text-center finish -->
+                                <p>* Kötelező mező</p>
                                 
                             </form> <!-- form finish -->
                             
@@ -118,8 +109,6 @@
                                     $subject = "Köszönjük az üzeneted!";
 
                                     $msg = "Új üzenet tőle: vonalrolad@gmail.com Az üzenet: Köszönjük az üzeneted! Hamarosan felvesszük Veled a kapcsolatot!";
-
-                                    //$from = "vonalrolad@gmail.com";
 
                                     mail($sender_email,$subject,$msg);
 

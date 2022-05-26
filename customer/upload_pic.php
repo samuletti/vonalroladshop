@@ -30,7 +30,7 @@
 
         <button type="submit" name="upload" class="btn btn-primary">
 
-        <i class="fa fa-user-md"></i> Feltöltés </button>
+        <i class="fa fa-upload"></i> Feltöltés </button>
 
     </div> <!-- text-center finish -->
     

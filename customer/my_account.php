@@ -58,9 +58,12 @@
 
                     <ul class="menu"> <!-- cmenu begin -->
                         
-                        <li>
-                            <a href="../customer_register.php">Regisztráció</a>
-                        </li>
+                    <?php
+                        if(!isset($_SESSION['customer_email'])){
+                        echo"<li>
+                            <a href='customer_register.php'>Regisztráció</a>
+                        </li>";}?>
+                        
                         <li>
                             <a href="my_account.php?my_orders">Fiókom</a>
                         </li>

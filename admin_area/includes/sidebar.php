@@ -35,38 +35,6 @@
             </a> <!-- dropdown-toggle finish -->
 
             <ul class="dropdown-menu"> <!-- dropdown-menu begin -->
-                
-                <li> <!-- li begin -->
-                    <a href="index.php?view-products"> <!-- a href begin -->
-
-                        <i class="fa fa-fw fa-envelope"></i> Termékek
-
-                        <span class="badge"><?php echo $count_products; ?></span>
-
-                    </a> <!-- a href finish -->
-                </li> <!-- li finish -->
-
-                <li> <!-- li begin -->
-                    <a href="index.php?view_customers"> <!-- a href begin -->
-
-                        <i class="fa fa-fw fa-users"></i> Vásárlók
-
-                        <span class="badge"><?php echo $count_customers; ?></span>
-
-                    </a> <!-- a href finish -->
-                </li> <!-- li finish -->
-
-                <li> <!-- li begin -->
-                    <a href="index.php?view_p_cats"> <!-- a href begin -->
-
-                        <i class="fa fa-fw fa-gear"></i> Termék típusok
-
-                        <span class="badge"><?php echo $count_p_categories; ?></span>
-
-                    </a> <!-- a href finish -->
-                </li> <!-- li finish -->
-
-                <li class="divider"></li>
 
                 <li> <!-- li begin -->
                     <a href="logout.php"> <!-- a href begin -->
@@ -136,26 +104,6 @@
 
             <li> <!-- li begin -->
 
-                <a href="#" data-toggle="collapse" data-target="#cat"> <!-- a href begin -->
-
-                    <i class="fa fa-fw fa-book"></i> Kategóriák
-                    <i class="fa fa-fw fa-caret-down"></i>
-
-                </a> <!-- a href finish -->
-
-                <ul id="cat" class="collapse"> <!-- collapse begin -->
-                    <li> <!-- li begin -->
-                        <a href="index.php?insert_cat"> Kategória létrehozása </a>
-                    </li> <!-- li begin -->
-                    <li> <!-- li finish -->
-                        <a href="index.php?view_cats"> Kategóriák megtekintése </a>
-                    </li> <!-- li finish -->
-                </ul> <!-- collapse finish -->
-
-            </li> <!-- li finish -->
-
-            <li> <!-- li begin -->
-
                 <a href="#" data-toggle="collapse" data-target="#slides"> <!-- a href begin -->
 
                     <i class="fa fa-fw fa-gear"></i> Diavetítés
@@ -207,7 +155,7 @@
             </li> <!-- li finish -->
             <li> <!-- li begin -->
                 <a href="index.php?view_pics"> <!-- a href begin -->
-                    <i class="fa fa-fw fa-camera"></i> Vásárlói Fényképek
+                    <i class="fa fa-fw fa-camera"></i> Vásárlói fényképek
                 </a> <!-- a href finish -->
             </li> <!-- li finish -->
 

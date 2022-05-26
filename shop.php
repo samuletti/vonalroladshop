@@ -39,7 +39,7 @@
                                 
                                 <div class='box'> <!-- box begin -->
                                     <h1>VonalRólad Bolt</h1>
-                                    <p>Rövid leírás ... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi itaque voluptatum nihil dolore voluptates, distinctio quos molestias laborum ea molestiae, alias perspiciatis amet, at quo illum laboriosam? Alias, porro.</p>
+                                    <p>A VonalRólad Boltban lehetőséged van egyaránt digitális és fizikai termékeket vásárolni. Digitális terméknek számít a fekete-fehér és a színes digitális vonalrajz, amelyet a saját fényképed alapján készítünk el kézzel rajzolva, digitális eszközökkel. Minden egyéb termék fizikai terméknek számít, például: nyomtatott, keretezett változata a vonalrajzodnak, póló, amelyre a vonalrajzodat nyomtatjuk, stb. Egyes termékeknél van lehetőséged színt és/vagy méretet választani. Minden esetben ki tudod választani, mely fényképből szeretnél digitális vonalrajzot - a fiókodba feltöltött fényképek közül tudsz választani; illetve, hogy melyik elkészült rajzból szeretnél fizikai terméket - a fiókodban található, már elkészült rajzok közül tudsz választani.</p>
                                 </div> <!-- box finish -->
                                 
                             ";
@@ -102,21 +102,21 @@
 
                                                 <p class='price'>
 
-                                                    $pro_price
+                                                    $pro_price Ft
                                                 
                                                 </p>
 
-                                                <p class='buttons'>
+                                                <p class='buttons center-responsive'>
 
-                                                    <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                                                    <a class='btn btn-default shop' href='details.php?pro_id=$pro_id'>
 
-                                                        View Details
+                                                        Részletek
                                                     
                                                     </a>
 
                                                     <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
 
-                                                        <i class='fa fa-shopping-cart'></i> Add to Cart
+                                                        <i class='fa fa-shopping-cart'></i>Kosárba
                                                     
                                                     </a>
                                                 

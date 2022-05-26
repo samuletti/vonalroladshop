@@ -25,7 +25,7 @@
         <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> Diák megtekintése
+                    <i class="fa fa-gear"></i> Diák megtekintése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
 

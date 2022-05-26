@@ -41,7 +41,7 @@
                                 <th> Termék neve: </th>
                                 <th> Termék fotó: </th>
                                 <th> Termék ára: </th>
-                                <th> Létrehozás: </th>
+                                <th> Létrehozás dátuma: </th>
                                 <th> Szerkesztés: </th>
                                 <th> Törlés: </th>
                                 

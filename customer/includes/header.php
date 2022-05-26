@@ -81,7 +81,7 @@
                             }
                         
                         ?></a>
-                    <a href="checkout.php"> <?php items(); ?> termék van a kosaradban | Termékek ára: <?php total_price(); ?></a>
+                    <a href="cart.php"> <?php items(); ?> termék van a kosaradban | Termékek ára: <?php total_price(); ?></a>
 
                 </div> <!-- col-md-6 offer finish -->
 
@@ -89,14 +89,17 @@
 
                     <ul class="menu"> <!-- cmenu begin -->
                         
-                        <li>
-                            <a href="../customer_register.php">Regisztráció</a>
-                        </li>
+                    <?php
+                        if(!isset($_SESSION['customer_email'])){
+                        echo"<li>
+                            <a href='customer_register.php'>Regisztráció</a>
+                        </li>";}?>
+                        
                         <li>
                             <a href="my_account.php?my_orders">Fiókom</a>
                         </li>
                         <li>
-                            <a href="../cart.php">Go To Cart</a>
+                            <a href="../cart.php">Kosár</a>
                         </li>
                         <li>
                             <a href="../checkout.php">
@@ -144,10 +147,10 @@
                         <ul class="nav navbar-nav left"> <!-- nav navbar-nav left begin -->
 
                         <li>
-                            <a href="../index.php">Home</a>
+                            <a href="../index.php">Főoldal</a>
                         </li>
                         <li>
-                            <a href="../shop.php">Shop</a>
+                            <a href="../shop.php">Bolt</a>
                         </li>
                         <li class="active">
                             <a href="my_account.php?my_orders">Fiókom</a>

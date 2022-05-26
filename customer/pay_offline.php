@@ -1,9 +1,9 @@
 <center> <!-- center begin -->
 
-    <h1> Fizetéshez szükségees adatok </h1>
+    <h1> Fizetéshez szükséges adatok </h1>
 
     <p class="text-muted">
-        Bármilyen kérdés esetén <a href="../contact.php">keress minket</a> bizalommal!
+        Bármilyen kérdés esetén <strong><a href="../contact.php">keress minket</a></strong> bizalommal!
     </p>
 
 </center> <!-- center finish -->

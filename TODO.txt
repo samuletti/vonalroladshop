@@ -1,6 +1,0 @@
-Tartalom feltöltése
-Order Status módosítása
-Payment Confirmation (módosítsa a felhasználó oldalán is)
-Ékezeteket az adatbázisba!!!
-
-megj.txt kijavítása

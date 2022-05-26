@@ -13,24 +13,28 @@
                         <li>
                             <a href="index.php">Főoldal</a>
                         </li>
-                        <li>
+                        <?php 
+
+                        if(!isset($_SESSION['customer_email'])){
+
+                            echo"<li>
                             Regisztráció
-                        </li>
+                        </li>";
+
+                        }else{
+
+                            echo"<li>
+                            Fizetés
+                        </li>";
+
+                        }
+                    
+                    ?>
                     </ul> <!-- breadcrumb finish -->
 
                 </div> <!-- col-md-12 finish -->
 
-                <div class="col-md-3"> <!-- col-md-3 begin -->
-
-                        <?php 
-                
-                            include("includes/sidebar.php");
-                
-                        ?>
-
-                </div> <!-- col-md-3 finish -->
-
-                <div class="col-md-9"> <!-- col-md-9 begin -->
+                <div class="col-md-12"> <!-- col-md-9 begin -->
 
                     <?php 
 

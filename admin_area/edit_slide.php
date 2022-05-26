@@ -42,23 +42,23 @@
 
 <div class="row"> <!-- row begin -->
     <div class="col-lg-12"> <!-- col-lg-12 begin -->
-        <div class="panel panel-default"> <!-- panel panel-default begin -->
+        <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
                     <i class="fa fa-gear fa-fw"></i> Dia szerkesztése
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
-
+<p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
                 <form action="" class="form-horizontal" method="post" enctype="multipart/form-data"> <!-- form-horizontal begin -->
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Dia neve
+                            Dia neve*
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
-                            <input name="slide_name" type="text" class="form-control" value="<?php echo $slide_name; ?>">
+                            <input name="slide_name" type="text" class="form-control" value="<?php echo $slide_name; ?>" required>
                         </div> <!-- col-md-6 finish -->
 
                     </div> <!-- form-group finish -->
@@ -66,7 +66,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                                Dia
+                                Dia*
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -84,7 +84,7 @@
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
-                            <input value="Update Now" name="update" type="submit" class="form-control btn btn-primary">
+                            <input value="Dia szerkesztése" name="update" type="submit" class="form-control btn btn-primary">
                         </div> <!-- col-md-6 finish -->
 
                     </div> <!-- form-group finish -->

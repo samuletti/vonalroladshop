@@ -20,17 +20,7 @@
 
                 </div> <!-- col-md-12 finish -->
 
-                <div class="col-md-3"> <!-- col-md-3 begin -->
-
-                    <?php 
-            
-                        include("includes/sidebar.php");
-            
-                    ?>
-
-                </div> <!-- col-md-3 finish -->
-
-                <div class="col-md-9"> <!-- col-md-9 begin -->
+                <div class="col-md-12"> <!-- col-md-9 begin -->
 
                     <div class="box"> <!-- box begin -->
 
@@ -46,56 +36,56 @@
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Név:</label>
+                                    <label>Név:*</label>
                                     <input type="text" class="form-control" name="c_name" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>E-mail cím:</label>
+                                    <label>E-mail cím:*</label>
                                     <input type="text" class="form-control" name="c_email" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Jelszó:</label>
+                                    <label>Jelszó:*</label>
                                     <input type="password" class="form-control" name="c_pass" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Ország:</label>
+                                    <label>Ország:*</label>
                                     <input type="text" class="form-control" name="c_country" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Város:</label>
+                                    <label>Város:*</label>
                                     <input type="text" class="form-control" name="c_city" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Cím:</label>
+                                    <label>Cím:*</label>
                                     <input type="text" class="form-control" name="c_address" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Telefonszám:</label>
+                                    <label>Telefonszám:*</label>
                                     <input type="text" class="form-control" name="c_contact" required>
 
                                 </div> <!-- form-group finish -->
 
                                 <div class="form-group"> <!-- form-group begin -->
 
-                                    <label>Profilkép:</label>
+                                    <label>Profilkép:*</label>
                                     <input type="file" class="form-control form-height-custom" name="c_image" required>
 
                                 </div> <!-- form-group finish -->
@@ -104,11 +94,13 @@
 
                                     <button type="submit" name="register" class="btn btn-primary">
 
-                                    <i class="fa fa-user-md"></i> Regisztráció </button>
+                                    <i class="fa fa-user"></i> Regisztráció </button>
 
                                 </div> <!-- text-center finish -->
                                 
                             </form> <!-- form finish -->
+
+                            <p>* Kötelező mező</p>
                             
                         </div> <!-- box-header finish -->
 

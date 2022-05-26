@@ -30,7 +30,15 @@
 
                         <?php
 
-                            /* $ip_add = getRealIpUser(); */
+                            $ip_add = getRealIpUser();
+
+                            if(!isset($_SESSION['customer_email'])){
+                                $select_cart = "select * from cart where ip_add='$ip_add'";
+
+                                $run_cart = mysqli_query($con,$select_cart);
+
+                                $count = mysqli_num_rows($run_cart);
+                            }else{
 
                             $customer_email = $_SESSION['customer_email'];
 
@@ -44,6 +52,7 @@
                             $run_cart = mysqli_query($con,$select_cart);
 
                             $count = mysqli_num_rows($run_cart);
+                            }
                         
                         ?>
 
@@ -204,7 +213,7 @@
 
                                 </button> <!-- btn btn-default finish -->
 
-                                <a href="checkout.php" class="btn btn-primary">
+                                <a href="checkout.php" class="btn btn-primary" <?php $i = items(); if($i == 0){echo"disabled";} ?>>
 
                                     Tovább a fizetéshez <i class="fa fa-chevron-right"></i>
 

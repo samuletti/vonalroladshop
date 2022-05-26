@@ -26,7 +26,7 @@
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-tags"></i> Vásárlók fényképeinek megtekintése
+                    <i class="fa fa-camera"></i> Vásárlók fényképeinek megtekintése
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->

@@ -25,20 +25,20 @@
         <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-money fa-fw"></i> Termék típus létrehozása
+                    <i class="fa fa-plus"></i> Termék típus létrehozása
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
-
+            <p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
                 <form action="" class="form-horizontal" method="post"> <!-- form-horizontal begin -->
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Termék típus neve
+                            Termék típus neve * 
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
-                            <input name="p_cat_title" type="text" class="form-control">
+                            <input name="p_cat_title" type="text" class="form-control" required>
                         </div> <!-- col-md-6 finish -->
 
                     </div> <!-- form-group finish -->
@@ -46,7 +46,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Termék típus leírása
+                            Termék típus leírása 
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -62,7 +62,7 @@
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
-                            <input value="Submit" name="submit" type="submit" class="form-control btn btn-primary">
+                            <input value="Termék típus létrehozása" name="submit" type="submit" class="form-control btn btn-primary">
                         </div> <!-- col-md-6 finish -->
 
                     </div> <!-- form-group finish -->
@@ -85,8 +85,8 @@
 
         if($run_p_cat){
 
-            echo "<script>alert(Új termék típus létrehozva)</script>";
-            echo "<script>window.open('index.php?view_p_cats'),'_self'</script>";
+            echo "<script>alert('Új termék típus hozzáadva')</script>";
+            echo "<script>window.open('index.php?view_p_cats','_self')</script>";
 
         }
 

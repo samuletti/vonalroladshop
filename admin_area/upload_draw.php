@@ -40,21 +40,21 @@
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Rajz feltöltése
+                        <i class="fa fa-upload"></i> Rajz feltöltése
 
                     </h3> <!-- panel-title begin -->
 
                 </div> <!-- panel-heading finish -->
 
             </div> <!-- panel panel-default finish -->
-
+<p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
 
                 <form method="post" class="form-horizontal" enctype="multipart/form-data"> <!-- form-horizontal begin -->
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Vásárló Azonosítója </label>
+                        <label class="col-md-3 control-label"> Vásárló azonosítója (ID)* </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="customer_id" type="text" class="form-control" required>
@@ -65,7 +65,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Vásárló E-mail Címe </label>
+                        <label class="col-md-3 control-label"> Vásárló e-mail címe* </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="customer_email" type="text" class="form-control" required>
@@ -76,7 +76,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Fénykép Azonosítója </label>
+                        <label class="col-md-3 control-label"> Fénykép azonosítója (ID)* </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="pic_id" type="text" class="form-control" required>
@@ -87,7 +87,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Rajz </label>
+                        <label class="col-md-3 control-label"> Rajz* </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="drawing" type="file" class="form-control" required>
@@ -101,7 +101,7 @@
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <input name="upload" value="Upload Draw" type="submit" class="btn btn-primary form-control">
+                            <input name="upload" value="Rajz feltöltése" type="submit" class="btn btn-primary form-control">
 
                         </div> <!-- col-md-6 finish -->
 

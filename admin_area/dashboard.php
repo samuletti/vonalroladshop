@@ -113,21 +113,21 @@
                 <div class="row"> <!-- row begin -->
                     <div class="col-xs-3"> <!-- col-xs-3 begin -->
 
-                        <i class="fa fa-tags fa-5x"></i>
+                        <i class="fa fa-pencil fa-5x"></i>
 
                     </div> <!-- col-xs-3 finish -->
 
                     <div class="col-xs-9 text-right"> <!-- col-xs-9 text-right begin -->
                         <div class="huge"> <!-- huge begin -->
-                            <?php echo $count_p_categories; ?>
+                            <?php echo $count_drawings; ?>
                         </div> <!-- huge finish -->
-                        <div> Termék Típusok </div>
+                        <div> Elkészített rajzok </div>
                     </div> <!-- col-xs-9 text-right finish -->
 
                 </div> <!-- row finish -->
             </div> <!-- panel-heading finish -->
 
-            <a href="index.php?view_p_cats"> <!-- a href begin -->
+            <a href="index.php?view_draws"> <!-- a href begin -->
                 <div class="panel-footer"> <!-- panel-footer begin -->
 
                     <span class="pull-left"> <!-- pull-left begin -->
@@ -194,7 +194,7 @@
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
 
-                    <i class="fa fa-money fa-fw"></i> Új Rendelések
+                    <i class="fa fa-clipboard"></i> Új rendelések
 
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
@@ -215,7 +215,6 @@
                             <th> Szín: </th>
                             <th> Fénykép: </th>
                             <th> Rajz: </th>
-                            <th> Állapot: </th>
                         </tr>
 
                         </thead> <!-- thead finish -->
@@ -273,7 +272,6 @@
                                     <td> <?php echo"$color"; ?> </td>
                                     <td> <?php echo"$pic_name"; ?> </td>
                                     <td> <?php echo"$draw_name"; ?> </td>
-                                    <td> <?php echo"$order_status"; ?> </td>
 
                                 </tr> <!-- tr finish -->
 
@@ -318,9 +316,9 @@
 
                 <div class="mb-md"> <!-- mb-md begin -->
                     <div class="widget-content-expanded"> <!-- widget-content-expanded begin -->
-                        <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
+                        <i class="fa fa-envelope"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
                         <i class="fa fa-flag"></i> <span> Ország: </span> <?php echo $admin_country; ?> <br/>
-                        <i class="fa fa-envelope"></i> <span> Kapcsolat: </span> <?php echo $admin_contact; ?> <br/>
+                        <i class="fa fa-user"></i> <span> Kapcsolat: </span> <?php echo $admin_contact; ?> <br/>
                     </div> <!-- widget-content-expanded finish -->
 
                     <hr class="dotted short">

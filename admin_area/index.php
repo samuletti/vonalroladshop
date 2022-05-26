@@ -43,14 +43,14 @@
         $count_customers = mysqli_num_rows($run_customers);
 
 
-        $get_p_categories = "select * from product_categories";
+        $get_drawings = "select * from drawings";
 
-        $run_p_categories = mysqli_query($con,$get_p_categories);
+        $run_drawings = mysqli_query($con,$get_drawings);
 
-        $count_p_categories = mysqli_num_rows($run_p_categories);
+        $count_drawings = mysqli_num_rows($run_drawings);
 
 
-        $get_pending_orders = "select * from customer_orders where order_status='Pending'";
+        $get_pending_orders = "select * from customer_orders where order_status!='Completed'";
 
         $run_pending_orders = mysqli_query($con,$get_pending_orders);
 

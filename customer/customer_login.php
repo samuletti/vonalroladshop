@@ -6,9 +6,7 @@
 
             <h1> Bejelentkezés </h1>
 
-            <p class="lead"> Már regisztráltál? </p>
-
-            <p class="text-muted"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis amet pariatur odio, nostrum, aliquam tenetur rerum ipsum quasi et, optio modi accusantium qui minima id voluptates dolorum. Voluptatibus, dolor eum. </p>
+            <p class="lead"> Már regisztráltál? Jelentkezz be az e-mail címeddel és jelszavaddal! </p>
 
         </center> <!-- center finish -->
 
@@ -41,12 +39,12 @@
         </div> <!-- text-center finish -->
 
     </form> <!-- form finish -->
-
+<hr>
     <center> <!-- center begin -->
 
         <a href="./customer_register.php">
 
-            <h3> Még nincs fiókod? Regisztrálj itt! </h3>
+            <h2> Még nincs fiókod? Regisztrálj itt! </h2>
 
         </a>
 
@@ -65,12 +63,14 @@
         $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
 
         $run_customer = mysqli_query($con,$select_customer);
+        $row_customer = mysqli_fetch_array($run_customer);
+        $customer_id = $row_customer['customer_id'];
 
         $get_ip = getRealIpUser();
 
         $check_customer = mysqli_num_rows($run_customer);
 
-        $select_cart = "select * from cart where ip_add='$get_ip'";
+        $select_cart = "select * from cart where ip_add='$get_ip' or customer_id='$customer_id'";
 
         $run_cart = mysqli_query($con,$select_cart);
 

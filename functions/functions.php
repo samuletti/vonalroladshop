@@ -24,7 +24,24 @@
         global $db;
         if(isset($_GET['add_cart'])){
 
-            /* $ip_add = getRealIpUser(); */
+            if(!isset($_SESSION['customer_email'])){
+            $ip_add = getRealIpUser();
+            $p_id = $_GET['add_cart'];
+
+            $product_qty = $_POST['product_qty'];
+
+            $product_size = $_POST['product_size'];
+            
+            $product_color = $_POST['product_color'];
+            
+            $product_pic = $_POST['product_pic'];
+
+            $product_draw = $_POST['product_draw'];
+
+            $query = "insert into cart (p_id,ip_add,qty,size,customer_id,color,pic_name,draw_name) values ('$p_id','$ip_add','$product_qty','$product_size', '$customer_id', '$product_color', '$product_pic', '$product_draw')";
+            
+            $run_query = mysqli_query($db,$query);
+        }else{
 
             $customer_email = $_SESSION['customer_email'];
 
@@ -53,6 +70,7 @@
 
             /* echo $query; */
             $run_query = mysqli_query($db,$query);
+        }
 
             echo "<script>window.open('shop.php','_self')</script>";
 

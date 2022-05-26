@@ -315,6 +315,11 @@ body {
     }
 }
 
+.center-responsive .product .btn-default.shop{
+    display: inline-block;
+    margin-left: 30px;
+}
+
 /* details.php styles */
 
 #content #productMain{
@@ -471,9 +476,13 @@ body {
 
 #copyright{
     background: #333333;
-    color: #cccccc;
+    color: #ffffff;
     padding: 20px 0px;
     font-size: 12px;
+}
+
+#copyright p.pull-right a{
+    color: #ffffff;
 }
 
 #copyright p{

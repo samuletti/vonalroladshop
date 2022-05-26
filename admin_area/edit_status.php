@@ -28,16 +28,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Edit Product </title>
-    <link rel="stylesheet" href="css/bootstrap-337.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-</head>
 <body>
     
     <div class="row"> <!-- row begin -->
@@ -62,20 +52,20 @@
 
         <div class="col-lg-12"> <!-- col-lg-12 begin -->
 
-            <div class="panel panel-default"> <!-- panel panel-default begin -->
+            <div class="panel panel-brown"> <!-- panel panel-default begin -->
 
                 <div class="panel-heading"> <!-- panel-heading begin -->
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Rendelés állapotának frissítése
+                        <i class="fa fa-clipboard"></i> Rendelés állapotának frissítése
 
                     </h3> <!-- panel-title begin -->
 
                 </div> <!-- panel-heading finish -->
 
             </div> <!-- panel panel-default finish -->
-
+<p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
 
                 <form method="post" class="form-horizontal" enctype="multipart/form-data"> <!-- form-horizontal begin -->
@@ -113,12 +103,12 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Állapot </label>
+                        <label class="col-md-3 control-label"> Állapot* </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <select name="stat" class="form-control"> <!-- form-control begin -->
+                            <select name="stat" class="form-control" required> <!-- form-control begin -->
 
-                                <option value="<?php echo $o_stat; ?>"> <?php echo $o_stat; ?> </option>
+                                <option value="<?php echo $o_stat; ?>" disabled selected> <?php echo $o_stat; ?> </option>
                                 <option value="Pending"> Pending </option>
                                 <option value="Paid / In Progress"> Paid / In Progress </option>
                                 <option value="In Transit"> In Transit </option>
@@ -135,7 +125,7 @@
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <input name="update" value="Update Status" type="submit" class="btn btn-primary form-control">
+                            <input name="update" value="Frissítés" type="submit" class="btn btn-primary form-control">
 
                         </div> <!-- col-md-6 finish -->
 

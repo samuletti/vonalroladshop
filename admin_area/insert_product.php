@@ -39,21 +39,21 @@
 
                     <h3 class="panel-title"> <!-- panel-title begin -->
 
-                        <i class="fa fa-money fa-fw"></i> Termék hozzáadása
+                        <i class="fa fa-plus"></i> Termék hozzáadása
 
                     </h3> <!-- panel-title begin -->
 
                 </div> <!-- panel-heading finish -->
 
             </div> <!-- panel panel-default finish -->
-
+            <p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
 
                 <form method="post" class="form-horizontal" enctype="multipart/form-data"> <!-- form-horizontal begin -->
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Termék neve </label>
+                        <label class="col-md-3 control-label"> Termék neve * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_title" type="text" class="form-control" required>
@@ -64,12 +64,12 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Termék típusa </label>
+                        <label class="col-md-3 control-label"> Termék típusa * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <select name="product_cat" class="form-control"> <!-- form-control begin -->
+                            <select name="product_cat" class="form-control" required> <!-- form-control begin -->
 
-                                <option> Válassz... </option>
+                                <option disabled selected> Válassz... </option>
                                 <?php 
 
                                     $get_p_cats = "select * from product_categories";
@@ -98,41 +98,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Kategória </label>
-                        <div class="col-md-6"> <!-- col-md-6 begin -->
-
-                            <select name="cat" class="form-control"> <!-- form-control begin -->
-
-                                <option> Válassz... </option>
-                                <?php 
-
-                                    $get_cat = "select * from categories";
-                                    $run_cat = mysqli_query($con, $get_cat);
-
-                                    while ($row_cat=mysqli_fetch_array($run_cat)){
-
-                                        $cat_id = $row_cat['cat_id'];
-                                        $cat_title = $row_cat['cat_title'];
-
-                                        echo "
-
-                                            <option value='$cat_id'> $cat_title </option>
-
-                                        ";
-
-                                    }
-                                
-                                ?>
-
-                            </select> <!-- form-control finish -->
-
-                        </div> <!-- col-md-6 finish -->
-
-                    </div> <!-- form-group finish -->
-
-                    <div class="form-group"> <!-- form-group begin -->
-
-                        <label class="col-md-3 control-label"> Termék Fotó 1 </label>
+                        <label class="col-md-3 control-label"> Termék fotó 1 * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_img1" type="file" class="form-control" required>
@@ -143,10 +109,10 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Termék Fotó 2 </label>
+                        <label class="col-md-3 control-label"> Termék fotó 2 * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <input name="product_img2" type="file" class="form-control">
+                            <input name="product_img2" type="file" class="form-control" required>
 
                         </div> <!-- col-md-6 finish -->
 
@@ -154,10 +120,10 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Termék Fotó 3 </label>
+                        <label class="col-md-3 control-label"> Termék fotó 3 * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <input name="product_img3" type="file" class="form-control">
+                            <input name="product_img3" type="file" class="form-control" required>
 
                         </div> <!-- col-md-6 finish -->
 
@@ -165,7 +131,7 @@
 
                     <div class="form-group"> <!-- form-group begin -->
 
-                        <label class="col-md-3 control-label"> Termék ára </label>
+                        <label class="col-md-3 control-label"> Termék ára * </label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
                             <input name="product_price" type="text" class="form-control" required>
@@ -190,7 +156,7 @@
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-6"> <!-- col-md-6 begin -->
 
-                            <input name="submit" value="Insert Product" type="submit" class="btn btn-primary form-control">
+                            <input name="submit" value="Termék hozzáadása" type="submit" class="btn btn-primary form-control">
 
                         </div> <!-- col-md-6 finish -->
 
@@ -217,7 +183,7 @@
 
         $product_title = $_POST['product_title'];
         $product_cat = $_POST['product_cat'];
-        $cat = $_POST['cat'];
+        
         $product_price = $_POST['product_price'];
         $product_desc = $_POST['product_desc'];
 
@@ -239,7 +205,7 @@
         move_uploaded_file($temp_name2,$img_path . $product_img2);
         move_uploaded_file($temp_name3,$img_path . $product_img3);
 
-        $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc) values('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc')";
+        $insert_product = "insert into products (p_cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc) values('$product_cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc')";
 
         $run_product = mysqli_query($con, $insert_product);
 

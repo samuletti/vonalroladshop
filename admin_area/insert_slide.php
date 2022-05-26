@@ -35,16 +35,16 @@
         <div class="panel panel-brown"> <!-- panel panel-default begin -->
             <div class="panel-heading"> <!-- panel-heading begin -->
                 <h3 class="panel-title"> <!-- panel-title begin -->
-                    <i class="fa fa-gear fa-fw"></i> Dia hozzáadása
+                    <i class="fa fa-plus"></i> Dia hozzáadása
                 </h3> <!-- panel-title finish -->
             </div> <!-- panel-heading finish -->
-
+<p class="pull-right">* Kötelező</p>
             <div class="panel-body"> <!-- panel-body begin -->
                 <form action="" class="form-horizontal" method="post" enctype="multipart/form-data"> <!-- form-horizontal begin -->
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                            Dia neve
+                            Dia neve*
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -56,7 +56,7 @@
                     <div class="form-group"> <!-- form-group begin -->
 
                         <label for="" class="control-label col-md-3"> <!-- control-label col-md-3 begin -->
-                                Dia
+                                Dia*
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
@@ -72,7 +72,7 @@
                         </label> <!-- control-label col-md-3 finish -->
 
                         <div class="col-md-6"> <!-- col-md-6 begin -->
-                            <input value="Submit Now" name="submit" type="submit" class="form-control btn btn-primary">
+                            <input value="Dia hozzáadása" name="submit" type="submit" class="form-control btn btn-primary">
                         </div> <!-- col-md-6 finish -->
 
                     </div> <!-- form-group finish -->

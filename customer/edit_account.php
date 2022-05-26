@@ -19,7 +19,7 @@
 
 ?>
 
-<h1 align="center"> Felhasználó módosítása </h1>
+<h1 align="center"> Fiók szerkesztése </h1>
 
 <form action="" method="post" enctype="multipart/form-data"> <!-- form begin -->
 
@@ -75,9 +75,9 @@
 
         <label> Profilkép: </label>
 
-        <input type="file" name="c_image" class="form-control form-height-custom">
+        <input type="file" name="c_image" class="form-control form-height-custom" disabled>
 
-        <img class="img-responsive" src="customer_images/<?php echo $customer_image; ?>" alt="Customer Image" required>
+        <img class="img-responsive" width="150" src="customer_images/<?php echo $customer_image; ?>" alt="Customer Image" required>
 
     </div> <!-- form-group finish -->
 
@@ -85,7 +85,7 @@
 
         <button name="update" class="btn btn-primary"> <!-- btn btn-primary begin -->
 
-            <i class="fa fa-user-md"></i> Frissítés
+            <i class="fa fa-user"></i> Frissítés
 
         </button> <!-- btn btn-primary finish -->
 
@@ -104,12 +104,8 @@
         echo $c_city = $_POST['c_city'];
         echo $c_address = $_POST['c_address'];
         echo $c_contact = $_POST['c_contact'];
-        echo $c_image = $_FILES['c_image']['name'];
-        echo $c_image_tmp = $_FILES['c_image']['tmp_name'];
-        
-        echo move_uploaded_file($c_image_tmp,"customer_images/$c_image");
 
-        $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_country='$c_country',customer_city='$c_city',customer_address='$c_address',customer_contact='$c_contact',customer_profile='$c_image' where customer_id='$update_id'";
+        $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_country='$c_country',customer_city='$c_city',customer_address='$c_address',customer_contact='$c_contact' where customer_id='$update_id'";
 
         $run_customer = mysqli_query($con,$update_customer);
 
